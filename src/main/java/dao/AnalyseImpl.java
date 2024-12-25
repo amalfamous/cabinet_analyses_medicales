@@ -1,0 +1,68 @@
+package dao;
+
+import entites.Analyse;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+import java.util.List;
+
+public class AnalyseImpl implements IDao<Analyse> {
+    private EntityManagerFactory emf;
+    private EntityManager em;
+
+    public AnalyseImpl(){
+        emf= Persistence.createEntityManagerFactory("cabinet");
+        em=emf.createEntityManager();
+    }
+    @Override
+    public void create(Analyse analyse) {
+        try {
+            em.getTransaction().begin();
+            em.persist(analyse);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void update(Long id, Analyse analyse) {
+        em.getTransaction().begin();
+        Analyse analyse1=em.find(Analyse.class, id);
+        if (analyse1!=null){
+            if (analyse.getNom()!=null) analyse1.setNom(analyse.getNom());
+            if (analyse.getPrix()!=null) analyse1.setPrix(analyse.getPrix());
+            if (analyse.getDescription()!=null) analyse1.setDescription(analyse.getDescription());
+            if (analyse.getResultatAnalyses()!=null) analyse1.setResultatAnalyses(analyse.getResultatAnalyses());
+            if (analyse.getLaborantin()!=null) analyse1.setLaborantin(analyse.getLaborantin());
+        }
+        em.getTransaction().commit();
+    }
+
+    @Override
+    public void delete(Long id) {
+        em.getTransaction().begin();
+        Analyse analyse=em.find(Analyse.class, id);
+        if (analyse!=null){
+            if (!analyse.getResultatAnalyses().isEmpty()){
+                throw new RuntimeException("L'analyse est associé à un ou Resultat d'analyses !");
+            }
+            em.remove(analyse);
+        }
+        em.getTransaction().commit();
+    }
+
+    @Override
+    public Analyse findById(Long id) {
+        return em.find(Analyse.class, id);
+    }
+
+    @Override
+    public List<Analyse> findAll() {
+        return em.createQuery("SELECT a FROM Analyse a", Analyse.class).getResultList();
+    }
+
+
+}
