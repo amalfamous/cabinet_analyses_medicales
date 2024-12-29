@@ -1,6 +1,7 @@
 
 Q
-java:S10667"/Merge this if statement with the enclosing one.(¾ãœÄüÿÿÿÿ8êÒÓÁ2
+java:S1066D"/Merge this if statement with the enclosing one.(¾ãœÄüÿÿÿÿ8¢¿Å˜Á2
+X	java:S125"<This block of commented-out lines of code should be removed.(áÂ¶ø8Å³Ì˜Á2
 o
-java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 33 to the 15 allowed.(†åˆÛ8úğññÀ2
-]	java:S1250"<This block of commented-out lines of code should be removed.(ı”ÁÉıÿÿÿÿ8şğññÀ2
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(†åˆÛ8³¿Å˜Á2
+]	java:S125="<This block of commented-out lines of code should be removed.(ı”ÁÉıÿÿÿÿ8·¿Å˜Á2

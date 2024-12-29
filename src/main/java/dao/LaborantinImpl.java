@@ -25,6 +25,9 @@ public class LaborantinImpl implements IDao<Laborantin> {
             if (laborantin.getAnalyses() != null) {
                 laborantin.setAnalyses(em.merge(laborantin.getAnalyses()));
             }
+            if (laborantin.getUser() != null) {
+                laborantin.setUser(em.merge(laborantin.getUser()));
+            }
             em.persist(laborantin);
             em.getTransaction().commit();
         }catch (Exception e){
@@ -43,6 +46,8 @@ public class LaborantinImpl implements IDao<Laborantin> {
             if (laborantin.getTelephone()!=null) l.setTelephone(laborantin.getTelephone());
             if (laborantin.getEmail()!=null) l.setEmail(laborantin.getEmail());
             if (laborantin.getAnalyses()!=null) l.setAnalyses(laborantin.getAnalyses());
+            if (laborantin.getUser() != null) l.setUser(em.merge(laborantin.getUser()));
+
         }
         em.getTransaction().commit();
     }
@@ -57,6 +62,10 @@ public class LaborantinImpl implements IDao<Laborantin> {
                     analyse.setLaborantin(null);
                     em.merge(analyse);
                 }
+            }
+            if (laborantin.getUser() != null) {
+                laborantin.getUser().setPatient(null);
+                em.merge(laborantin.getUser());
             }
             em.remove(laborantin);
         }

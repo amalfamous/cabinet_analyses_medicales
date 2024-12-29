@@ -19,6 +19,9 @@ public class Medecin {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="medecin_id")
     private List<OrdreAnalyse> ordreAnalyse;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
     public Medecin(){
 
     }

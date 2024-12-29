@@ -18,6 +18,9 @@ public class Laborantin {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="laborantin_id")
     private List<Analyse> analyses;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
     public Laborantin(){
 
     }

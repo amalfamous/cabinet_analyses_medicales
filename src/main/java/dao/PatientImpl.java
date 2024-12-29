@@ -22,8 +22,20 @@ public class PatientImpl  implements IDao<Patient> {
     public void create(Patient patient) {
         try{
             em.getTransaction().begin();
-            if (patient.getOrdreAnalyses() != null) {
+            /*if (patient.getOrdreAnalyses() != null) {
                 patient.setOrdreAnalyses(em.merge(patient.getOrdreAnalyses()));
+            }*/
+            if (patient.getOrdreAnalyses() != null) {
+                for (OrdreAnalyse ordreAnalyse : patient.getOrdreAnalyses()) {
+                    if (ordreAnalyse.getId() == 0) { // Si l'ID est 0, c'est une nouvelle entité
+                        em.persist(ordreAnalyse);
+                    } else {
+                        em.merge(ordreAnalyse);
+                    }
+                }
+            }
+            if (patient.getUser() != null) {
+                patient.setUser(em.merge(patient.getUser()));
             }
             em.persist(patient);
             em.getTransaction().commit();
@@ -44,6 +56,7 @@ public class PatientImpl  implements IDao<Patient> {
             if (patient.getEmail()!=null) p.setEmail(patient.getEmail());
             if (patient.getAdresse()!=null) p.setAdresse(patient.getAdresse());
             if (patient.getDateNaissance()!=null) p.setDateNaissance(patient.getDateNaissance());
+            if (patient.getUser()!=null) p.setUser(patient.getUser());
 /*
             if (patient.getOrdreAnalyses()!=null) p.setOrdreAnalyses(patient.getOrdreAnalyses());
 */
@@ -73,6 +86,10 @@ public class PatientImpl  implements IDao<Patient> {
                     ordreAnalyse.setPatient(null);
                     em.merge(ordreAnalyse);
                 }
+            }
+            if (patient.getUser() != null) {
+                patient.getUser().setPatient(null);
+                em.merge(patient.getUser());
             }
 
             em.remove(patient);

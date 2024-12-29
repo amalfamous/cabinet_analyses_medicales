@@ -97,3 +97,13 @@ Q.idea/sonarlint/securityhotspotstore/f/f/ff77530437a236abaf4dfbd7aad6a97dd2e1e3
 Q.idea/sonarlint/securityhotspotstore/6/6/662254f395bf3d0abd18f21e70c80d0ac2b1c729,5\3\5360b10d628ba0cb031126482437697c76d98b84
 Å
 Q.idea/sonarlint/securityhotspotstore/7/1/71a3ac2b00f9ccc7d94f4060c2014ab2d93959e6,3\4\345fd409fdc5822c55cef98debe933becd27cfe8
+O
+src/main/java/entites/User.java,b\e\be39def1d65949595d83d24300a440f5a0417327
+O
+src/main/java/dao/UserImpl.java,c\a\cacc349e2e7ff1d39fc91099df952187e6273fb7
+V
+&src/main/java/service/AuthService.java,f\5\f577623d535484927fcb9913d4be40aff600b239
+T
+$src/main/java/test/TestUserImpl.java,2\2\22eda8ea8141dceb52fa3fbb7acc9bcadcd1ec6c
+P
+ src/main/java/test/TestUser.java,8\5\85d9b1a57201710812734286fbca2fe04a75ae20

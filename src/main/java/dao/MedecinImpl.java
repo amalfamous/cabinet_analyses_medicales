@@ -25,6 +25,9 @@ public class MedecinImpl  implements IDao<Medecin> {
             if (medecin.getOrdreAnalyse() != null) {
                 medecin.setOrdreAnalyse(em.merge(medecin.getOrdreAnalyse()));
             }
+            if (medecin.getUser() != null) {
+                medecin.setUser(em.merge(medecin.getUser()));
+            }
             em.persist(medecin);
             em.getTransaction().commit();
         }catch (Exception e){
@@ -44,6 +47,8 @@ public class MedecinImpl  implements IDao<Medecin> {
             if (medecin.getEmail()!=null) l.setEmail(medecin.getEmail());
             if (medecin.getSpecialite()!=null) l.setSpecialite(medecin.getSpecialite());
             if (medecin.getOrdreAnalyse()!=null) l.setOrdreAnalyse(medecin.getOrdreAnalyse());
+            if (medecin.getUser() != null) l.setUser(em.merge(medecin.getUser()));
+
         }
         em.getTransaction().commit();
     }
@@ -58,6 +63,11 @@ public class MedecinImpl  implements IDao<Medecin> {
                     ordreAnalyse.setMedecin(null);
                     em.merge(ordreAnalyse);
                 }
+            }
+
+            if (medecin.getUser() != null) {
+                medecin.getUser().setPatient(null);
+                em.merge(medecin.getUser());
             }
             em.remove(medecin);
         }
