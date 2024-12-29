@@ -1,0 +1,27 @@
+
+^
+java:S1192"HDefine a constant instead of duplicating this literal ", Nom: " 4 times.( úé­
+_
+java:S1192"IDefine a constant instead of duplicating this literal ", Prix: " 4 times.( úé­
+@	java:S106"+Replace this use of System.out by a logger.(ÈŞ”…
+?	java:S106"+Replace this use of System.out by a logger.(ŸôĞ
+@	java:S106"+Replace this use of System.out by a logger.(ë‚³Ø
+B
+java:S1602",Remove useless curly braces around statement(Ş«‘
+@	java:S106"+Replace this use of System.out by a logger.( úé­
+E	java:S106"+Replace this use of System.out by a logger.(æ“ºÖøÿÿÿÿ
+@	java:S106!"+Replace this use of System.out by a logger.(…Æ›¦
+@	java:S106#"+Replace this use of System.out by a logger.(¬Ğâ
+@	java:S106&"+Replace this use of System.out by a logger.(ÑÁ’ø
+B
+java:S1602'",Remove useless curly braces around statement(Ş«‘
+@	java:S106("+Replace this use of System.out by a logger.( úé­
+E	java:S1060"+Replace this use of System.out by a logger.(‹¯Ë®ÿÿÿÿÿ
+P	java:S125,"<This block of commented-out lines of code should be removed.(÷„‰[
+B
+java:S16021",Remove useless curly braces around statement(Ş«‘
+@	java:S1062"+Replace this use of System.out by a logger.( úé­
+L	java:S1065"+Replace this use of System.out by a logger.(å®Ô‰ûÿÿÿÿ8ÕÃŞÁ2
+I
+java:S16026",Remove useless curly braces around statement(Ş«‘8ŞÃŞÁ2
+G	java:S1067"+Replace this use of System.out by a logger.( úé­8áÃŞÁ2

@@ -1,0 +1,27 @@
+
+h
+java:S1192"LDefine a constant instead of duplicating this literal ", PrÃ©nom: " 3 times.(¤­°8±ú”À2
+d
+java:S1192"HDefine a constant instead of duplicating this literal ", Nom: " 3 times.(¤­°8²ú”À2
+G	java:S106"+Replace this use of System.out by a logger.(ÈŞ”…8¿ú”À2
+L	java:S106"+Replace this use of System.out by a logger.(˜ÿì­ÿÿÿÿÿ8Åú”À2
+G	java:S106"+Replace this use of System.out by a logger.(ë‚³Ø8Æú”À2
+H
+java:S1602",Remove useless curly braces around statement(ÿän8Çú”À2
+F	java:S106"+Replace this use of System.out by a logger.(¤­°8Çú”À2
+L	java:S106"+Replace this use of System.out by a logger.(æ“ºÖøÿÿÿÿ8†îåÁ2
+L	java:S106!"+Replace this use of System.out by a logger.(ğ“½¢ûÿÿÿÿ8‰îåÁ2
+L	java:S106#"+Replace this use of System.out by a logger.(®ÊÛğøÿÿÿÿ8ŠîåÁ2
+G	java:S106&"+Replace this use of System.out by a logger.(ÑÁ’ø8ŠîåÁ2
+H
+java:S1602'",Remove useless curly braces around statement(ÿän8‹îåÁ2
+F	java:S106("+Replace this use of System.out by a logger.(¤­°8îåÁ2
+F	java:S106+"+Replace this use of System.out by a logger.(÷„‰[8îåÁ2
+L	java:S106/"+Replace this use of System.out by a logger.(›Áş–üÿÿÿÿ8’îåÁ2
+L	java:S1061"+Replace this use of System.out by a logger.(®ÊÛğøÿÿÿÿ8“îåÁ2
+L	java:S1064"+Replace this use of System.out by a logger.(‹¯Ë®ÿÿÿÿÿ8“îåÁ2
+H
+java:S16025",Remove useless curly braces around statement(ÿän8”îåÁ2
+F	java:S1066"+Replace this use of System.out by a logger.(¤­°8•îåÁ2
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Öğ¼¥À2
