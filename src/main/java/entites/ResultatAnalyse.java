@@ -2,12 +2,13 @@ package entites;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.HashMap;
-
+import java.util.Map;
 @Entity
 @Data
+@ToString(exclude = {"analyse","ordreAnalyse"})
 public class ResultatAnalyse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +16,21 @@ public class ResultatAnalyse {
     private LocalDateTime dateResultat;
 
     private String detailsResultat;
-    @ElementCollection // Spécifie une collection basique stockée dans une table associée
-    @CollectionTable(name = "valeurs_resultat",
-            joinColumns = @JoinColumn(name = "resultat_analyse_id")) // Définition de la table associée
-    @MapKeyColumn(name = "parametre") // Colonne pour les clés du HashMap
-    @Column(name = "valeur") // Colonne pour les valeurs du HashMap
-    private HashMap<String, Double> valeurs;
-    @ManyToOne
+    @ElementCollection
+    @CollectionTable(name = "resultat_analyse_valeurs",
+            joinColumns = @JoinColumn(name = "resultat_analyse_id"))
+    @MapKeyColumn(name = "valeur_key")
+    @Column(name = "valeur_value")
+    private Map<String, Double> valeurs=new HashMap<>();
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "analyse_id")
     private Analyse analyse;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ordre_analyse_id")
     private OrdreAnalyse ordreAnalyse;
-    public ResultatAnalyse(){
-
+    public ResultatAnalyse() {
+        this.valeurs = new HashMap<>();
+        this.valeurs.put("parametre", 0.0);
     }
+
 }

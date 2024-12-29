@@ -1,6 +1,7 @@
 package dao;
 
 import entites.Analyse;
+import entites.ResultatAnalyse;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -8,17 +9,24 @@ import jakarta.persistence.Persistence;
 import java.util.List;
 
 public class AnalyseImpl implements IDao<Analyse> {
-    private EntityManagerFactory emf;
-    private EntityManager em;
+    private EntityManagerFactory emf;//bax n gerer les cnx a la bd
+    private EntityManager em;//exécuter des requêtes + les enregistrer dans BD
 
-    public AnalyseImpl(){
-        emf= Persistence.createEntityManagerFactory("cabinet");
-        em=emf.createEntityManager();
+    public AnalyseImpl() {
+        emf = Persistence.createEntityManagerFactory("cabinet");
+        em = emf.createEntityManager();
     }
+
     @Override
     public void create(Analyse analyse) {
         try {
             em.getTransaction().begin();
+            if (analyse.getLaborantin() != null) {
+                analyse.setLaborantin(em.merge(analyse.getLaborantin()));
+            }
+            if (analyse.getResultatAnalyses() != null) {
+                analyse.setResultatAnalyses(em.merge(analyse.getResultatAnalyses()));
+            }
             em.persist(analyse);
             em.getTransaction().commit();
         } catch (Exception e) {
@@ -30,13 +38,13 @@ public class AnalyseImpl implements IDao<Analyse> {
     @Override
     public void update(Long id, Analyse analyse) {
         em.getTransaction().begin();
-        Analyse analyse1=em.find(Analyse.class, id);
-        if (analyse1!=null){
-            if (analyse.getNom()!=null) analyse1.setNom(analyse.getNom());
-            if (analyse.getPrix()!=null) analyse1.setPrix(analyse.getPrix());
-            if (analyse.getDescription()!=null) analyse1.setDescription(analyse.getDescription());
-            if (analyse.getResultatAnalyses()!=null) analyse1.setResultatAnalyses(analyse.getResultatAnalyses());
-            if (analyse.getLaborantin()!=null) analyse1.setLaborantin(analyse.getLaborantin());
+        Analyse analyse1 = em.find(Analyse.class, id);
+        if (analyse1 != null) {
+            if (analyse.getNom() != null) analyse1.setNom(analyse.getNom());
+            if (analyse.getPrix() != null) analyse1.setPrix(analyse.getPrix());
+            if (analyse.getDescription() != null) analyse1.setDescription(analyse.getDescription());
+            if (analyse.getResultatAnalyses() != null) analyse1.setResultatAnalyses(analyse.getResultatAnalyses());
+            if (analyse.getLaborantin() != null) analyse1.setLaborantin(analyse.getLaborantin());
         }
         em.getTransaction().commit();
     }
@@ -44,10 +52,17 @@ public class AnalyseImpl implements IDao<Analyse> {
     @Override
     public void delete(Long id) {
         em.getTransaction().begin();
-        Analyse analyse=em.find(Analyse.class, id);
-        if (analyse!=null){
-            if (!analyse.getResultatAnalyses().isEmpty()){
-                throw new RuntimeException("L'analyse est associé à un ou Resultat d'analyses !");
+        Analyse analyse = em.find(Analyse.class, id);
+        if (analyse != null) {
+            if (analyse.getLaborantin() != null) {
+                analyse.setLaborantin(null);
+                em.merge(analyse);
+            }
+            if (analyse.getResultatAnalyses() != null) {
+                for (ResultatAnalyse resultatAnalyse : analyse.getResultatAnalyses()) {
+                    resultatAnalyse.setAnalyse(null);
+                    em.merge(resultatAnalyse);
+                }
             }
             em.remove(analyse);
         }

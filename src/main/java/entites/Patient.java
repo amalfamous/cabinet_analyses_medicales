@@ -2,14 +2,13 @@ package entites;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.List;
-
 @Entity
 @Data
+@ToString(exclude = {"ordresAnalyses"})
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,10 +18,10 @@ public class Patient {
     private String telephone;
     private String email;
     private LocalDateTime dateNaissance;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="patient_id")
     private List<OrdreAnalyse> ordreAnalyses;
-
     public Patient() {
     }
+
 }
