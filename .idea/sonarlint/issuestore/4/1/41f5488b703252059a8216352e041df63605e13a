@@ -1,0 +1,8 @@
+
+C
+java:S1604"(Make this anonymous inner class a lambda(ÉÂöàûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÝØ˜Žúÿÿÿÿ
+r	java:S116"XRename this field "button_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøÚ²ýÿÿÿÿ
+r	java:S116"XRename this field "label_welcome" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÅ¦‡øÿÿÿÿ
+j	java:S116"URename this field "label_role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÊ¦²
+Q	java:S125"<This block of commented-out lines of code should be removed.(ëµùÜ

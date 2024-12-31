@@ -99,7 +99,7 @@ public class UserImpl implements IDao<User> {
                     .setParameter("username", username)
                     .getSingleResult();
 
-            // Vérifier si le mot de passe correspond
+            // Vérifier si le mot de passe correspond avec BCrypt
             if (user != null && BCrypt.checkpw(password, user.getPassword())) {
                 return user;
             } else {
@@ -108,6 +108,16 @@ public class UserImpl implements IDao<User> {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public void updatePassword(Long userId, String newPassword) {
+        em.getTransaction().begin();
+        User user = em.find(User.class, userId);
+        if (user != null) {
+            String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+            user.setPassword(hashedPassword);
+        }
+        em.getTransaction().commit();
     }
 
 }

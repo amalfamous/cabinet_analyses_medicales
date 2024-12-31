@@ -24,7 +24,6 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "medecin_id" )
     private Medecin medecin;
-
     public User() {
     }
 }

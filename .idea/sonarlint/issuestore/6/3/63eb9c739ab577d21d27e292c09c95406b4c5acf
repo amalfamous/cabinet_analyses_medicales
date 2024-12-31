@@ -1,0 +1,18 @@
+
+R
+java:S3740ˆ"/Provide the parametrized type for this generic.(øêíøÿÿÿÿ8»îÆôÁ2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8½îÆôÁ2
+q	java:S116"URename this field "admin_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã£Ö™8„ïÆôÁ2
+t	java:S116"XRename this field "button_loggin" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÅù“8„ïÆôÁ2
+z	java:S116"YRename this field "button_sign_up" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô±§Èøÿÿÿÿ8„ïÆôÁ2
+r	java:S116!"VRename this field "tf_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó„‹Ó8…ïÆôÁ2
+q	java:S116$"VRename this field "tf_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã«Ñs8…ïÆôÁ2
+t
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(›°şÿûÿÿÿÿ8ç¦öÁ2
+L	java:S106;"+Replace this use of System.out by a logger.(Ôù‘ûÿÿÿÿ8¢ç¦öÁ2
+F	java:S106<"+Replace this use of System.out by a logger.(»ò‚q8£ç¦öÁ2
+L	java:S106b"+Replace this use of System.out by a logger.(’ «´úÿÿÿÿ8»ç¦öÁ2
+I
+java:S1172h",Remove this unused method parameter "event".(×öƒÎ8“ïÆôÁ2
+w
+java:S3012…"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(”Í€8ŸÇáöÁ2

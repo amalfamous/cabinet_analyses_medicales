@@ -79,12 +79,62 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
         </dependency>
+            <!-- Jakarta Servlet API -->
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>5.0.0</version> <!-- Vérifiez que cette version correspond à votre serveur -->
+                <scope>provided</scope>
+            </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21</version> <!-- Vérifiez la dernière version compatible avec OpenJDK 21 -->
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21</version>
+        </dependency>
+        <!-- Dépendance JavaFX pour les graphiques -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>21</version>
+        </dependency>
 
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.2</version>
+        </dependency>
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>gluon-releases</id>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.5</version> <!-- Assurez-vous d'avoir la dernière version -->
+                <configuration>
+                    <mainClass>Controller.MultUserAccount</mainClass> <!-- Classe contenant la méthode main -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal> <!-- Cette exécution permet de lancer l'application -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
 </project>
