@@ -1,5 +1,8 @@
 package dao;
 
+import entites.Laborantin;
+import entites.Medecin;
+import entites.Patient;
 import entites.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -16,7 +19,45 @@ public class UserImpl implements IDao<User> {
         em = emf.createEntityManager();
     }
 
+
     @Override
+    public void create(User user) {
+        try {
+            em.getTransaction().begin();
+
+            // Hash du mot de passe
+            String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+            user.setPassword(hashedPassword);
+
+            // Gestion des entités associées
+            if (user.getLaborantin() != null) {
+                Laborantin laborantin = user.getLaborantin();
+                laborantin.setUser(user); // Assurez-vous que la relation est bidirectionnelle
+                em.persist(laborantin);
+            }
+            if (user.getPatient() != null) {
+                Patient patient = user.getPatient();
+                patient.setUser(user); // Assurez-vous que la relation est bidirectionnelle
+                em.persist(patient);
+            }
+            if (user.getMedecin() != null) {
+                Medecin medecin = user.getMedecin();
+                medecin.setUser(user); // Assurez-vous que la relation est bidirectionnelle
+                em.persist(medecin);
+            }
+
+            // Persister l'utilisateur
+            em.persist(user);
+
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+        }
+    }
+
+
+   /* @Override
     public void create(User user) {
         try {
             em.getTransaction().begin();
@@ -37,7 +78,7 @@ public class UserImpl implements IDao<User> {
             em.getTransaction().rollback();
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Override
     public void update(Long id, User user) {

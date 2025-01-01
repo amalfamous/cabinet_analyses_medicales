@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegistrationFormController">
+   <children>
+      <TextField fx:id="tf_password" layoutX="85.0" layoutY="245.0" prefHeight="27.0" prefWidth="156.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <TextField fx:id="tf_telephone" layoutX="85.0" layoutY="183.0" prefHeight="27.0" prefWidth="156.0" promptText="Telephone" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <TextField fx:id="tf_username" layoutX="330.0" layoutY="186.0" prefHeight="27.0" prefWidth="156.0" promptText="Nom d'utilisateur" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <TextField fx:id="tf_nom" layoutX="85.0" layoutY="126.0" prefHeight="27.0" prefWidth="156.0" promptText="Nom " style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <TextField fx:id="tf_prenom" layoutX="330.0" layoutY="126.0" prefHeight="27.0" prefWidth="156.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <Text fill="#535878" layoutX="167.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formulaire d'inscription">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tf_confirmPassword" layoutX="330.0" layoutY="245.0" prefHeight="27.0" prefWidth="156.0" promptText="Confirmez le mot de passe" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
+      <Button fx:id="button_register" layoutX="355.0" layoutY="311.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #535878;" text="Inscrire" textFill="WHITE" />
+      <Text layoutX="120.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous etes" />
+      <ComboBox fx:id="options" layoutX="85.0" layoutY="311.0" onAction="#selectRole" prefWidth="150.0" promptText="Sélectionner" />
+   </children>
+</AnchorPane>

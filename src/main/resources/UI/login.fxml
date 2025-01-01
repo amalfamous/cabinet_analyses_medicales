@@ -34,7 +34,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button fx:id="button_sign_up" layoutX="83.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: #525866;" text="Pas de compte ? Inscrivez-vous" textFill="WHITE" />
+            <Button fx:id="button_sign_up" layoutX="83.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnSignup" style="-fx-background-color: #525866;" text="Pas de compte ? Inscrivez-vous" textFill="WHITE" />
             <Text layoutX="134.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autre Compte" />
             <ComboBox fx:id="admin_user" layoutX="99.0" layoutY="407.0" onAction="#switchForm" prefWidth="150.0" promptText="Sélectionner" />
             <Text fill="#535878" layoutX="115.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espace Admin">

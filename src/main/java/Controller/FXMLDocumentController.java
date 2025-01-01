@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -132,10 +133,23 @@ public class FXMLDocumentController implements Initializable {
         for (String data: Users.users){
             listU.add(data);
         }
-
         ObservableList listData= FXCollections.observableArrayList(listU);
         admin_user.setItems(listData);
     }
+
+    @FXML
+    public void btnSignup(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/UI/registerForm.fxml"));
+        Scene scene = new Scene(root);
+
+        // Récupérer le Stage à partir de l'événement
+        Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Formulaire d'inscription");
+        primaryStage.centerOnScreen();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

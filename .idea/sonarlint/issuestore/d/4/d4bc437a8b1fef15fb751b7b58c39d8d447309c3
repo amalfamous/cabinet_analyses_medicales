@@ -1,0 +1,12 @@
+
+n
+java:S1104"QMake users a static final constant or non-public and provide accessors if needed.(îÇô“8ŒÓŒÊÁ2
+H
+java:S1444"+Make this "public static users" field final(îÇô“8ÓŒÊÁ2
+1
+java:S1700"Rename field "users"(îÇô“8ÓŒÊÁ2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ÓŒÊÁ2
+:
+java:S2386"Make this member "protected".(îÇô“8‘ÓŒÊÁ2
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ÇÀÑËøÿÿÿÿ8’ÓŒÊÁ2
