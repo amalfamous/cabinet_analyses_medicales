@@ -74,11 +74,11 @@ public class FXMLDocumentController implements Initializable {
                     Parent root = null;
                     String role = user.getRole();
                     if ("ROLE_PATIENT".equalsIgnoreCase(role)) {
-                        root = FXMLLoader.load(getClass().getResource("/UI/PatientEspace.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/UI/PatientEspace2.fxml"));
                     } else if ("ROLE_LABORANTIN".equalsIgnoreCase(role)) {
-                        root = FXMLLoader.load(getClass().getResource("/UI/LaborantinEspace.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/UI/LaborantinEspace2.fxml"));
                     } else if ("ROLE_MEDECIN".equalsIgnoreCase(role)) {
-                        root = FXMLLoader.load(getClass().getResource("/UI/MedecinEspace.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/UI/MedecinEspace2.fxml"));
                     } else if ("ROLE_ADMIN".equalsIgnoreCase(role)) {
                         root = FXMLLoader.load(getClass().getResource("/UI/AdminEspace.fxml"));
                     } else {

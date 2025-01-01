@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LaborantinController">
+    <children>
+        <!-- Barre latérale -->
+        <AnchorPane layoutY="-1.0" prefHeight="607.0" prefWidth="200.0" style="-fx-background-color: #9DB0CE;">
+            <children>
+                <Button fx:id="button_loggin" layoutX="38.0" layoutY="554.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #535878;" text="Déconnexion" textFill="WHITE" />
+                <Button fx:id="button_analyses" layoutX="16.0" layoutY="199.0" mnemonicParsing="false" onAction="#analyses" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Analyses à effectuer" textFill="WHITE" />
+                <Button fx:id="button_resultatsAnalyses" layoutX="16.0" layoutY="248.0" mnemonicParsing="false" onAction="#resultatsAnalyses" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Résultats des analyses" textFill="WHITE" />
+                <Text layoutX="39.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue, " wrappingWidth="121.2421875">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Button fx:id="button_dashboard" layoutX="15.0" layoutY="154.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Tableau de bord" textFill="WHITE" />
+            <Label fx:id="username" layoutX="50.0" layoutY="73.0" text="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+
+        <!-- Section principale -->
+        <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
+            <children>
+                <!-- Graphe -->
+                <AnchorPane fx:id="form_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+                    <children>
+      
+                      <!-- Tableau -->
+                      <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="580.0">
+                          <children>
+                              <TableView fx:id="analyses_tableView" layoutX="14.0" layoutY="65.0" prefHeight="191.0" prefWidth="548.0">
+                                  <columns>
+                                      <TableColumn fx:id="col_analyseId" prefWidth="124.0" text="Id" />
+                                      <TableColumn fx:id="col_analyseNom" prefWidth="120.0" text="Nom" />
+                                      <TableColumn fx:id="col_analyse_description" prefWidth="207.0" text="Description" />
+                                      <TableColumn fx:id="col_analyse_prix" prefWidth="95.0" text="Prix" />
+                                  </columns>
+                              </TableView>
+                              <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" promptText="Rechercher" />
+                          </children>
+                      </AnchorPane>
+                  <Text layoutX="40.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+                  <TextField fx:id="nomAnalyse" layoutX="132.0" layoutY="388.0" />
+                  <Text layoutX="40.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                  <Text layoutX="40.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+                  <TextField fx:id="descriptionAnalyse" layoutX="132.0" layoutY="428.0" />
+                  <TextField fx:id="prixAnalyse" layoutX="132.0" layoutY="461.0" />
+                  <Button fx:id="btn_importer" layoutX="432.0" layoutY="426.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Importer" />
+                  <Button fx:id="btn_effacer" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Effacer" />
+                  <Button fx:id="btn_update" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Mettre à jour" />
+                  <Button fx:id="btn_ajouter" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Ajouter" />
+                  <Button fx:id="btn_supprimer" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Supprimer" />
+                    </children>
+                </AnchorPane>
+            <AnchorPane layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="161.0" prefWidth="580.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label fx:id="vlr1" layoutX="121.0" layoutY="66.0" text="vlr1" />
+                              <Label layoutX="47.0" layoutY="39.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="402.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label layoutX="42.0" layoutY="34.0" text="Label" />
+                              <Label fx:id="vlr3" layoutX="125.0" layoutY="68.0" text="vlr3" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="211.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label layoutX="32.0" layoutY="38.0" text="Label" />
+                              <Label fx:id="vlr2" layoutX="123.0" layoutY="63.0" text="vlr2" />
+                           </children>
+                        </AnchorPane>
+                        <AreaChart prefHeight="355.0" prefWidth="500.0" visible="false">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </AreaChart>
+                        <Label layoutX="276.0" layoutY="237.0" text="Graphe de" />
+                     </children>
+                  </AnchorPane>
+                  <AreaChart fx:id="graphe" layoutX="40.0" layoutY="276.0" prefHeight="302.0" prefWidth="500.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+               </children>
+            </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
