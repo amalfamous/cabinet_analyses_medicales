@@ -69,6 +69,7 @@ public class FXMLDocumentController implements Initializable {
 
             if (user != null) { // Si l'utilisateur est authentifié
                 successMessage("Connexion réussie !");
+                getData.username = user.getUsername();  // Stocker le nom d'utilisateur
                 // Rediriger vers l'espace correspondant à l'utilisateur
                 try {
                     Parent root = null;

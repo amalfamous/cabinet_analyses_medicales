@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnalyseImpl implements IDao<Analyse> {
@@ -43,8 +44,20 @@ public class AnalyseImpl implements IDao<Analyse> {
             if (analyse.getNom() != null) analyse1.setNom(analyse.getNom());
             if (analyse.getPrix() != null) analyse1.setPrix(analyse.getPrix());
             if (analyse.getDescription() != null) analyse1.setDescription(analyse.getDescription());
-            if (analyse.getResultatAnalyses() != null) analyse1.setResultatAnalyses(analyse.getResultatAnalyses());
-            if (analyse.getLaborantin() != null) analyse1.setLaborantin(analyse.getLaborantin());
+
+            if (analyse.getResultatAnalyses() != null) {
+                List<ResultatAnalyse> updatedResults = new ArrayList<>();
+                for (ResultatAnalyse resultat : analyse.getResultatAnalyses()) {
+                    // Merge chaque élément individuellement
+                    updatedResults.add(em.merge(resultat));
+                }
+                analyse1.setResultatAnalyses(updatedResults);
+            }
+
+            if (analyse.getLaborantin() != null) {
+                // Réattacher le laborantin si présent
+                analyse1.setLaborantin(em.merge(analyse.getLaborantin()));
+            }
         }
         em.getTransaction().commit();
     }

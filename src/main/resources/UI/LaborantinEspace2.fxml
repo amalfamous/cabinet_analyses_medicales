@@ -18,14 +18,14 @@
         <AnchorPane layoutY="-1.0" prefHeight="607.0" prefWidth="200.0" style="-fx-background-color: #9DB0CE;">
             <children>
                 <Button fx:id="button_logout" layoutX="38.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #535878;" text="Déconnexion" textFill="WHITE" />
-                <Button fx:id="button_analyses" layoutX="16.0" layoutY="199.0" mnemonicParsing="false" onAction="#analyses" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Analyses à effectuer" textFill="WHITE" />
-                <Button fx:id="button_resultatsAnalyses" layoutX="16.0" layoutY="248.0" mnemonicParsing="false" onAction="#resultatsAnalyses" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Résultats des analyses" textFill="WHITE" />
+                <Button fx:id="button_analyses" layoutX="16.0" layoutY="199.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Analyses à effectuer" textFill="WHITE" />
+                <Button fx:id="button_resultatsAnalyses" layoutX="16.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Résultats des analyses" textFill="WHITE" />
                 <Text layoutX="39.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue, " wrappingWidth="121.2421875">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Text>
-                <Button fx:id="button_dashboard" layoutX="15.0" layoutY="154.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Tableau de bord" textFill="WHITE" />
+                <Button fx:id="button_dashboard" layoutX="15.0" layoutY="154.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Tableau de bord" textFill="WHITE" />
                 <Label fx:id="username" layoutX="50.0" layoutY="73.0" text="Username">
                     <font>
                         <Font size="18.0" />
@@ -38,7 +38,7 @@
         <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
             <children>
                 <!-- Graphe -->
-                <AnchorPane fx:id="form_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+                <AnchorPane fx:id="form_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
                     <children>
 
                         <!-- Tableau -->
@@ -52,7 +52,7 @@
                                         <TableColumn fx:id="col_analyse_prix" prefWidth="95.0" text="Prix" />
                                     </columns>
                                 </TableView>
-                                <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" promptText="Rechercher" />
+                                <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" onAction="#rechercherAnalyse" promptText="Rechercher" />
                             </children>
                         </AnchorPane>
                         <Text layoutX="40.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
@@ -62,13 +62,13 @@
                         <TextField fx:id="descriptionAnalyse" layoutX="132.0" layoutY="428.0" />
                         <TextField fx:id="prixAnalyse" layoutX="132.0" layoutY="461.0" />
                         <Button fx:id="btn_importer" layoutX="432.0" layoutY="426.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Importer" textFill="WHITE" />
-                        <Button fx:id="btn_effacer" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
-                        <Button fx:id="btn_update" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
-                        <Button fx:id="btn_ajouter" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
-                        <Button fx:id="btn_supprimer" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
+                        <Button fx:id="btn_effacer" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#effacerChamps" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
+                        <Button fx:id="btn_update" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" onAction="#mettreAJourAnalyse" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
+                        <Button fx:id="btn_ajouter" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterAnalyse" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
+                        <Button fx:id="btn_supprimer" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" onAction="#supprimerAnalyse" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="dashboard" layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <AnchorPane prefHeight="161.0" prefWidth="580.0">
                             <children>

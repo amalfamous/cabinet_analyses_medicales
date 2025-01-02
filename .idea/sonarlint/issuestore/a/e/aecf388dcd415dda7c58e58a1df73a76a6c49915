@@ -1,30 +1,33 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ã°œÂ2
-y	java:S116"]Rename this field "analyses_tableView" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Ú‡8¡ã°œÂ2
-w	java:S116"VRename this field "btn_ajouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİ€áøÿÿÿÿ8¡ã°œÂ2
-r	java:S116"VRename this field "btn_effacer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âŠ³8®ã°œÂ2
-s	java:S116 "WRename this field "btn_importer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÌüŞ8®ã°œÂ2
-z	java:S116#"YRename this field "btn_rechercher" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÊâŞıÿÿÿÿ8®ã°œÂ2
-t	java:S116&"XRename this field "btn_supprimer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ö¥¨8®ã°œÂ2
-q	java:S116)"URename this field "btn_update" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÑ¤¯8®ã°œÂ2
-v	java:S116,"ZRename this field "button_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ñÆ³8®ã°œÂ2
-|	java:S116/"[Rename this field "button_dashboard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÁÌúÿÿÿÿ8®ã°œÂ2
-y	java:S1162"XRename this field "button_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøÚ²ıÿÿÿÿ8®ã°œÂ2
-„	java:S1165"cRename this field "button_resultatsAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ“°áûÿÿÿÿ8®ã°œÂ2
-y	java:S1168"XRename this field "col_analyseId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ì’œıÿÿÿÿ8®ã°œÂ2
-z	java:S116;"YRename this field "col_analyseNom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹‘ù½øÿÿÿÿ8®ã°œÂ2
-}	java:S116>"bRename this field "col_analyse_description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıÌ£_8¯ã°œÂ2
-w	java:S116A"[Rename this field "col_analyse_prix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¤ºİ8¯ã°œÂ2
-y	java:S116G"XRename this field "form_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¯Íşÿÿÿÿÿ8¯ã°œÂ2
+„
+java:S1192y"bDefine a constant instead of duplicating this literal "-fx-background-color: transparent" 4 times.(¡Ğáèûÿÿÿÿ8´íÈÃÂ2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8¹íÈÃÂ2
+~	java:S116"]Rename this field "analyses_tableView" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î¥üøÿÿÿÿ8ÀğÈÃÂ2
+w	java:S116"VRename this field "btn_ajouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİ€áøÿÿÿÿ8ÀğÈÃÂ2
+r	java:S116""VRename this field "btn_effacer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âŠ³8ÁğÈÃÂ2
+s	java:S116%"WRename this field "btn_importer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÌüŞ8ÁğÈÃÂ2
+z	java:S116("YRename this field "btn_rechercher" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÊâŞıÿÿÿÿ8ÁğÈÃÂ2
+t	java:S116+"XRename this field "btn_supprimer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ö¥¨8ÁğÈÃÂ2
+q	java:S116."URename this field "btn_update" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÑ¤¯8ÁğÈÃÂ2
+v	java:S1161"ZRename this field "button_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ñÆ³8ÂğÈÃÂ2
+|	java:S1164"[Rename this field "button_dashboard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÁÌúÿÿÿÿ8ÂğÈÃÂ2
+y	java:S1167"XRename this field "button_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøÚ²ıÿÿÿÿ8ÂğÈÃÂ2
+„	java:S116:"cRename this field "button_resultatsAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ“°áûÿÿÿÿ8ÂğÈÃÂ2
+y	java:S116="XRename this field "col_analyseId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Îßıÿÿÿÿ8ÃğÈÃÂ2
+z	java:S116@"YRename this field "col_analyseNom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğãù¨øÿÿÿÿ8ÃğÈÃÂ2
+~	java:S116C"bRename this field "col_analyse_description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ßÒ¡8ÃğÈÃÂ2
+|	java:S116F"[Rename this field "col_analyse_prix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ùñ÷ıÿÿÿÿ8ÃğÈÃÂ2
+y	java:S116O"XRename this field "form_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¯Íşÿÿÿÿÿ8ÃğÈÃÂ2
 
-java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8¯ã°œÂ2
+java:S1186g"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8ÄğÈÃÂ2
 £
-java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8¯ã°œÂ2
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8ÄğÈÃÂ2
 ¤
-java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8¯ã°œÂ2
-¤
-java:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‘İŸüÿÿÿÿ8¯ã°œÂ2
-E
-java:S1481w")Remove this unused "root" local variable.(šĞÿ8½“ÛÂ2
+java:S1186©"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8ÅğÈÃÂ2
+^	java:S125„"<This block of commented-out lines of code should be removed.(ÒÖ¨öùÿÿÿÿ8ÜğÈÃÂ2
+F
+java:S1481œ")Remove this unused "root" local variable.(šĞÿ8úğÈÃÂ2
+q
+java:S1602‰"SRemove useless curly braces around statement and then remove useless return keyword(´¦Û‡8ßñÈÃÂ2
 S
-java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8¶íÑÂ2
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8„òÈÃÂ2
