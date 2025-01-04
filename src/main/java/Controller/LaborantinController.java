@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -148,6 +150,7 @@ public class LaborantinController implements Initializable {
 
     @FXML
     private Label vlr3;
+
     @FXML
     void analyses(ActionEvent event) {
 
@@ -533,6 +536,23 @@ public class LaborantinController implements Initializable {
        if (!valeurKey.isEmpty() && !valeurValue.isEmpty()) {
            try {
                double value = Double.parseDouble(valeurValue);
+               Map<String, Double> valeurs = resultat.getValeurs();
+               if (valeurs == null) {
+                   valeurs = new HashMap<>();
+               }
+               valeurs.put(valeurKey, value);
+               resultat.setValeurs(valeurs);
+           } catch (NumberFormatException e) {
+               Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setContentText("La valeur doit être un nombre valide !");
+               alert.show();
+               return;
+           }
+       }
+//fhadi li commentit il crée une nouvelle carte au lieu de mettre à jour la carte existante.
+       /*if (!valeurKey.isEmpty() && !valeurValue.isEmpty()) {
+           try {
+               double value = Double.parseDouble(valeurValue);
                Map<String, Double> newValeurs = new HashMap<>(resultat.getValeurs());
                newValeurs.put(valeurKey, value);
                resultat.setValeurs(newValeurs);
@@ -542,7 +562,7 @@ public class LaborantinController implements Initializable {
                alert.show();
                return;
            }
-       }
+       }*/
 
      /*  if (!valeurKey.isEmpty() && !valeurValue.isEmpty()) {
            try {
