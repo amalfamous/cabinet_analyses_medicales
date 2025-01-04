@@ -4,6 +4,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LaborantinController">
+<AnchorPane fx:id="col_Nom_patient" prefHeight="606.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LaborantinController">
     <children>
         <!-- Barre latérale -->
         <AnchorPane layoutY="-1.0" prefHeight="607.0" prefWidth="200.0" style="-fx-background-color: #9DB0CE;">
@@ -38,7 +39,7 @@
         <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
             <children>
                 <!-- Graphe -->
-                <AnchorPane fx:id="form_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+                <AnchorPane fx:id="form_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
                     <children>
 
                         <!-- Tableau -->
@@ -61,7 +62,6 @@
                         <Text layoutX="40.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
                         <TextField fx:id="descriptionAnalyse" layoutX="132.0" layoutY="428.0" />
                         <TextField fx:id="prixAnalyse" layoutX="132.0" layoutY="461.0" />
-                        <Button fx:id="btn_importer" layoutX="432.0" layoutY="426.0" mnemonicParsing="false" style="-fx-background-color: #535878;" text="Importer" textFill="WHITE" />
                         <Button fx:id="btn_effacer" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#effacerChamps" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
                         <Button fx:id="btn_update" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" onAction="#mettreAJourAnalyse" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
                         <Button fx:id="btn_ajouter" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterAnalyse" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
@@ -111,6 +111,36 @@
                         </AreaChart>
                     </children>
                 </AnchorPane>
+            <AnchorPane fx:id="form_ordreAnalyses" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="resultat_analyses_tableView" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_ordreAnalyseId" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_detailsResultat" prefWidth="237.33334350585938" text="Details de resultat" />
+                              <TableColumn fx:id="col_dateResultat" prefWidth="106.00003051757812" text="Date de resultat" />
+                              <TableColumn fx:id="col_valeur_key" prefWidth="82.0" text="Valeur key" />
+                              <TableColumn fx:id="col_valeur_value" prefWidth="131.3333740234375" text="Valeur value" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher2" layoutX="24.0" layoutY="24.0" onAction="#rechercherResultatAnalyse" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+                  <Text fx:id="DetailsResultat" layoutX="40.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details de resultat" />
+                  <TextField fx:id="detailsResultat" layoutX="148.0" layoutY="394.0" />
+                  <Text layoutX="45.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de resultat" />
+                  <Button fx:id="btn_effacer1" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#effacerChampsResultat" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
+                  <Button fx:id="btn_update1" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" onAction="#mettreAJourResultat" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
+                  <Button fx:id="btn_ajouter1" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterResultatAnalyse" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
+                  <Button fx:id="btn_supprimer1" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" onAction="#supprimerResultatAnalyse" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
+                  <DatePicker fx:id="dateResultat" layoutX="148.0" layoutY="437.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField fx:id="Valeur_key" layoutX="447.0" layoutY="437.0" />
+                  <TextField fx:id="Valeur_value" layoutX="447.0" layoutY="394.0" />
+                  <Text layoutX="370.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valeur key" />
+                  <Text layoutX="366.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valeur value" />
+               </children>
+            </AnchorPane>
             </children>
         </AnchorPane>
     </children>

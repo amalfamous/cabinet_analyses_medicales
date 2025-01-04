@@ -11,9 +11,9 @@ public class TestResultatAnalyse {
         System.out.println("Création d'un ResultatAnalyse avec Analyse et OrdreAnalyse null...");
         ResultatAnalyse resultatAnalyse = new ResultatAnalyse();
         resultatAnalyse.setDateResultat(LocalDateTime.now());
-        resultatAnalyse.setDetailsResultat("Résultat de test");
+        resultatAnalyse.setDetailsResultat("Résultat de test2");
 
-        resultatAnalyse.getValeurs().put("TestKey", 123.45);
+        resultatAnalyse.getValeurs().put("TestKey", 113.445);
         dao.create(resultatAnalyse);
         System.out.println("RésultatAnalyse créé.");
 
@@ -30,11 +30,11 @@ public class TestResultatAnalyse {
         if (foundResultat != null) {
             foundResultat.setDetailsResultat("Résultat mis à jour");
             foundResultat.getValeurs().put("TestKeyUpdated", 987.65);
-
+            foundResultat.toString();
             dao.update((long) foundResultat.getId(), foundResultat);
             System.out.println("RésultatAnalyse mis à jour.");
         }
-
+/*
         System.out.println("Suppression du ResultatAnalyse avec ID = " + foundResultat.getId());
         if (foundResultat != null) {
             dao.delete((long) foundResultat.getId());
@@ -46,6 +46,6 @@ public class TestResultatAnalyse {
             System.out.println("Le ResultatAnalyse a été supprimé avec succès.");
         } else {
             System.out.println("Le ResultatAnalyse existe toujours.");
-        }
+        }*/
     }
 }

@@ -1,4 +1,10 @@
 
-l
-java:S1192"JDefine a constant instead of duplicating this literal "parametre" 4 times.(³ïİåüÿÿÿÿ8¼ØÏÀ2
-]	java:S1258"<This block of commented-out lines of code should be removed.(„Áãèúÿÿÿÿ8àÙÏÀ2
+F	java:S106<"+Replace this use of System.out by a logger.(Ìì»8õ»›ˆÃ2
+G	java:S106?"+Replace this use of System.out by a logger.(­Êı8”·±ˆÃ2
+W	java:S125L"<This block of commented-out lines of code should be removed.(·à£u8Ù½ˆÃ2
+]	java:S125T"<This block of commented-out lines of code should be removed.(„Áãèúÿÿÿÿ8ÿ‘‹òÂ2
+]	java:S125V"<This block of commented-out lines of code should be removed.(ĞÜ¦åÿÿÿÿÿ8¼ûö‡Ã2
+X	java:S125\"<This block of commented-out lines of code should be removed.(Ø¨š“8Ú½ˆÃ2
+L
+java:S1128
+"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8ÎëˆÃ2

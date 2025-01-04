@@ -1,33 +1,58 @@
 
-„
-java:S1192y"bDefine a constant instead of duplicating this literal "-fx-background-color: transparent" 4 times.(¡Ğáèûÿÿÿÿ8´íÈÃÂ2
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8¹íÈÃÂ2
-~	java:S116"]Rename this field "analyses_tableView" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î¥üøÿÿÿÿ8ÀğÈÃÂ2
-w	java:S116"VRename this field "btn_ajouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİ€áøÿÿÿÿ8ÀğÈÃÂ2
-r	java:S116""VRename this field "btn_effacer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âŠ³8ÁğÈÃÂ2
-s	java:S116%"WRename this field "btn_importer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÌüŞ8ÁğÈÃÂ2
-z	java:S116("YRename this field "btn_rechercher" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÊâŞıÿÿÿÿ8ÁğÈÃÂ2
-t	java:S116+"XRename this field "btn_supprimer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ö¥¨8ÁğÈÃÂ2
-q	java:S116."URename this field "btn_update" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÑ¤¯8ÁğÈÃÂ2
-v	java:S1161"ZRename this field "button_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ñÆ³8ÂğÈÃÂ2
-|	java:S1164"[Rename this field "button_dashboard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÁÌúÿÿÿÿ8ÂğÈÃÂ2
-y	java:S1167"XRename this field "button_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøÚ²ıÿÿÿÿ8ÂğÈÃÂ2
-„	java:S116:"cRename this field "button_resultatsAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ“°áûÿÿÿÿ8ÂğÈÃÂ2
-y	java:S116="XRename this field "col_analyseId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Îßıÿÿÿÿ8ÃğÈÃÂ2
-z	java:S116@"YRename this field "col_analyseNom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğãù¨øÿÿÿÿ8ÃğÈÃÂ2
-~	java:S116C"bRename this field "col_analyse_description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ßÒ¡8ÃğÈÃÂ2
-|	java:S116F"[Rename this field "col_analyse_prix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ùñ÷ıÿÿÿÿ8ÃğÈÃÂ2
-y	java:S116O"XRename this field "form_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¯Íşÿÿÿÿÿ8ÃğÈÃÂ2
-
-java:S1186g"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8ÄğÈÃÂ2
-£
-java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8ÄğÈÃÂ2
+…
+java:S1192«"bDefine a constant instead of duplicating this literal "-fx-background-color: transparent" 6 times.(¡Ğáèûÿÿÿÿ8í¾¾âÂ2
+–
+java:S1192ª"sDefine a constant instead of duplicating this literal "linear-gradient(to bottom right,#535878, #9DB0CE);" 3 times.(¾ö¾Óùÿÿÿÿ8î¾¾âÂ2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ö¾¾âÂ2
+q	java:S116"URename this field "Valeur_key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÿÅù8ª¹‹ãÂ2
+r	java:S116""WRename this field "Valeur_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùïì/8´¹‹ãÂ2
+v	java:S116$"ZRename this field "DetailsResultat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßœ•›8À¾âÂ2
+~	java:S116'"]Rename this field "analyses_tableView" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î¥üøÿÿÿÿ8À¾âÂ2
+‡	java:S116*"fRename this field "resultat_analyses_tableView" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ÊŒ™şÿÿÿÿ8À¾âÂ2
+w	java:S116-"VRename this field "btn_ajouter" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñİ€áøÿÿÿÿ8À¾âÂ2
+s	java:S1160"WRename this field "btn_ajouter1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Çˆ8À¾âÂ2
+r	java:S1163"VRename this field "btn_effacer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×âŠ³8À¾âÂ2
+x	java:S1166"WRename this field "btn_effacer1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ˆË‹øÿÿÿÿ8À¾âÂ2
+z	java:S1169"YRename this field "btn_rechercher" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÊâŞıÿÿÿÿ8À¾âÂ2
+v	java:S116;"ZRename this field "btn_rechercher2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÿµé8ÆüÅ†Ã2
+t	java:S116>"XRename this field "btn_supprimer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ö¥¨8À¾âÂ2
+u	java:S116A"YRename this field "btn_supprimer1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤£È™8À¾âÂ2
+q	java:S116D"URename this field "btn_update" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÑ¤¯8À¾âÂ2
+w	java:S116G"VRename this field "btn_update1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙË°øÿÿÿÿ8À¾âÂ2
+v	java:S116J"ZRename this field "button_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ñÆ³8À¾âÂ2
+|	java:S116M"[Rename this field "button_dashboard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÁÌúÿÿÿÿ8À¾âÂ2
+y	java:S116P"XRename this field "button_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøÚ²ıÿÿÿÿ8À¾âÂ2
+„	java:S116S"cRename this field "button_resultatsAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ“°áûÿÿÿÿ8À¾âÂ2
+z	java:S116W"YRename this field "col_valeur_key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üĞ™Áøÿÿÿÿ8È´õâÂ2
+w	java:S116Z"[Rename this field "col_valeur_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞôÅˆ8È´õâÂ2
+y	java:S116]"XRename this field "col_analyseId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Îßıÿÿÿÿ8À¾âÂ2
+z	java:S116`"YRename this field "col_analyseNom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğãù¨øÿÿÿÿ8À¾âÂ2
+~	java:S116c"bRename this field "col_analyse_description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ßÒ¡8À¾âÂ2
+|	java:S116f"[Rename this field "col_analyse_prix" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ùñ÷ıÿÿÿÿ8À¾âÂ2
+w	java:S116i"[Rename this field "col_dateResultat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øñù‰8‘À¾âÂ2
+z	java:S116l"^Rename this field "col_detailsResultat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ä÷ÿ8‘À¾âÂ2
+y	java:S116o"]Rename this field "col_ordreAnalyseId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹¤ÑÓ8‘À¾âÂ2
+y	java:S116~"XRename this field "form_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¯Íşÿÿÿÿÿ8‘À¾âÂ2
+z	java:S116"]Rename this field "form_ordreAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ°ÅÕ8‘À¾âÂ2
+Ÿ
+java:S1186˜"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8‘À¾âÂ2
 ¤
-java:S1186©"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8ÅğÈÃÂ2
-^	java:S125„"<This block of commented-out lines of code should be removed.(ÒÖ¨öùÿÿÿÿ8ÜğÈÃÂ2
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8‘À¾âÂ2
+¤
+java:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8‘À¾âÂ2
+
+java:S1845{"bRename field "detailsResultat" to prevent any misunderstanding/clash with field "DetailsResultat".(¤ççğ8’À¾âÂ2
 F
-java:S1481œ")Remove this unused "root" local variable.(šĞÿ8úğÈÃÂ2
+java:S1481Ò")Remove this unused "root" local variable.(šĞÿ8£À¾âÂ2
 q
-java:S1602‰"SRemove useless curly braces around statement and then remove useless return keyword(´¦Û‡8ßñÈÃÂ2
+java:S1602¶"SRemove useless curly braces around statement and then remove useless return keyword(´¦Û‡8ÁÀ¾âÂ2
+^	java:S125Ë"<This block of commented-out lines of code should be removed.(ƒ’ºáùÿÿÿÿ8ÅûÔñÂ2
+H	java:S106ü"+Replace this use of System.out by a logger.(¬öÕê8Èº½‡Ã2
+M	java:S106ş"+Replace this use of System.out by a logger.(ÿˆ‚Òûÿÿÿÿ8Éº½‡Ã2
+M	java:S106‹"+Replace this use of System.out by a logger.(šÄ‘§ùÿÿÿÿ8Éº½‡Ã2
+M	java:S106Œ"+Replace this use of System.out by a logger.(”ÆÚéûÿÿÿÿ8Êº½‡Ã2
+H	java:S106"+Replace this use of System.out by a logger.(½…ÆÔ8×â‡Ã2
+G	java:S106"+Replace this use of System.out by a logger.(º“§]8Øâ‡Ã2
+Y	java:S125£"<This block of commented-out lines of code should be removed.(ôèÄÓ8ØñÛ‡Ã2
 S
-java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8„òÈÃÂ2
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8‚‘Æ†Ã2

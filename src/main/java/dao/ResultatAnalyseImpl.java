@@ -7,6 +7,7 @@ import jakarta.persistence.Persistence;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ResultatAnalyseImpl implements IDao<ResultatAnalyse>{
     private EntityManagerFactory emf;
@@ -44,7 +45,34 @@ public class ResultatAnalyseImpl implements IDao<ResultatAnalyse>{
         }
     }
 
-    @Override
+    public void update(Long id, ResultatAnalyse resultatAnalyse) {
+        try {
+            em.getTransaction().begin();
+            ResultatAnalyse resultatAnalyse1 = em.find(ResultatAnalyse.class, id);
+            if (resultatAnalyse1 != null) {
+                if (resultatAnalyse.getDateResultat() != null) resultatAnalyse1.setDateResultat(resultatAnalyse.getDateResultat());
+                if (resultatAnalyse.getOrdreAnalyse() != null) resultatAnalyse1.setOrdreAnalyse(resultatAnalyse.getOrdreAnalyse());
+                if (resultatAnalyse.getValeurs() != null) {
+                    resultatAnalyse1.setValeurs(new HashMap<>(resultatAnalyse.getValeurs()));
+                }
+                if (resultatAnalyse.getAnalyse() != null) resultatAnalyse1.setAnalyse(resultatAnalyse.getAnalyse());
+                if (resultatAnalyse.getDetailsResultat() != null) resultatAnalyse1.setDetailsResultat(resultatAnalyse.getDetailsResultat());
+                System.out.println("Avant mise à jour dans la base : " + resultatAnalyse1);
+                em.merge(resultatAnalyse1);
+                em.flush();//Forcer la synchronisation avec la base de données
+                System.out.println("Après mise à jour dans la base : " + resultatAnalyse1);
+            } else {
+                throw new IllegalArgumentException("Aucun résultat trouvé avec l'id : " + id);
+            }
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    /* @Override
     public void update(Long id, ResultatAnalyse resultatAnalyse) {
         em.getTransaction().begin();
         ResultatAnalyse resultatAnalyse1 = em.find(ResultatAnalyse.class, id);
@@ -52,22 +80,29 @@ public class ResultatAnalyseImpl implements IDao<ResultatAnalyse>{
             if (resultatAnalyse.getDateResultat() != null) resultatAnalyse1.setDateResultat(resultatAnalyse.getDateResultat());
             if (resultatAnalyse.getOrdreAnalyse() != null) resultatAnalyse1.setOrdreAnalyse(resultatAnalyse.getOrdreAnalyse());
 
-/*
+*//*
             if (resultatAnalyse.getValeurs() != null) resultatAnalyse1.setValeurs(resultatAnalyse.getValeurs());
-*/
-            if (resultatAnalyse.getValeurs() != null) {
+*//*
+          *//*  if (resultatAnalyse.getValeurs() != null) {
                 if (!resultatAnalyse.getValeurs().containsKey("parametre")) {
                     resultatAnalyse.getValeurs().put("parametre", 0.0);
                 }
                 resultatAnalyse1.setValeurs(resultatAnalyse.getValeurs());
+            }*//*
+            if (resultatAnalyse.getValeurs() != null) {
+                Map<String, Double> valeurs = new HashMap<>(resultatAnalyse1.getValeurs());
+                valeurs.clear(); // Supprimer les anciennes valeurs
+                valeurs.putAll(resultatAnalyse.getValeurs());
+                resultatAnalyse1.setValeurs(valeurs);
             }
+
 
             if (resultatAnalyse.getAnalyse() != null) resultatAnalyse1.setAnalyse(resultatAnalyse.getAnalyse());
             if (resultatAnalyse.getDetailsResultat() != null) resultatAnalyse1.setDetailsResultat(resultatAnalyse.getDetailsResultat());
         }
         em.getTransaction().commit();
     }
-
+*/
     @Override
     public void delete(Long id) {
         em.getTransaction().begin();
