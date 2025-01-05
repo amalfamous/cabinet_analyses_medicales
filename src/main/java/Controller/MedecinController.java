@@ -760,7 +760,5 @@ indexOf(cellData.getValue()) retourne l'index de l'élément actuel dans la list
         loadPatients();
         loadResultatsAnalyses();
         loadOrdreAnalyses();
-
     }
-
 }
