@@ -131,7 +131,7 @@ public class LaborantinController implements Initializable {
     private AnchorPane form_ordreAnalyses;
 
     @FXML
-    private AreaChart<?, ?> graphe;
+    private AreaChart<String, Number> graphe;
 
     @FXML
     private TextField nomAnalyse;
@@ -150,7 +150,12 @@ public class LaborantinController implements Initializable {
 
     @FXML
     private Label vlr3;
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        displayUsername();
+        loadAnalyses();
+        loadResultatsAnalyses();
+    }
     @FXML
     void analyses(ActionEvent event) {
 
@@ -630,9 +635,6 @@ public class LaborantinController implements Initializable {
     }
 
 
-
-
-
     @FXML
     void effacerChampsResultat() {
         detailsResultat.clear();
@@ -641,11 +643,4 @@ public class LaborantinController implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        displayUsername();
-        loadAnalyses();
-        loadResultatsAnalyses();
-
-    }
-}
+   }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,6 @@ public class OrdreAnalyse {
     @JoinColumn(name = "facture_id")
     private Facture facture;
     public OrdreAnalyse(){
-
+        this.resultatAnalyses = new ArrayList<>();
     }
 }

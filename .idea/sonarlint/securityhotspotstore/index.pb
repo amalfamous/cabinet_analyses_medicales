@@ -3053,3 +3053,5 @@ Q.idea/sonarlint/securityhotspotstore/f/f/ff464062623c26453197098af0d13ffe885214
 Q.idea/sonarlint/securityhotspotstore/f/f/fffab1ae83c37bb42ef318c2c053a0320b241993,4\5\45538782d048ed9aaae5c510b57f11ef53e12d2e
 Å
 Q.idea/sonarlint/securityhotspotstore/b/5/b5d522261bd71a45fb2b9d5d584b67ab8db9c512,5\1\51efd094caba72f4b7ba3febef98978cdf37b2d3
+_
+/src/main/java/Controller/MedecinController.java,e\2\e2a645d4b9765e616c8622aeb2138da46a23805e

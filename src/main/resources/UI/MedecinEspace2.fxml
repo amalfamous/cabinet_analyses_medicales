@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.MedecinEspace2"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="col_Nom_patient" prefHeight="606.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MedecinController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="607.0" prefWidth="200.0" style="-fx-background-color: #9DB0CE;">
+         <children>
+            <Button fx:id="button_logout" layoutX="38.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #535878;" text="Déconnexion" textFill="WHITE" />
+            <Button fx:id="button_ordreAnalyses" layoutX="16.0" layoutY="199.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Ordre d'analyses" textFill="WHITE" />
+            <Button fx:id="button_patients" layoutX="16.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Patients" textFill="WHITE" />
+            <Text layoutX="39.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue, " wrappingWidth="121.2421875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="button_dashboard" layoutX="15.0" layoutY="154.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Tableau de bord" textFill="WHITE" />
+            <Label fx:id="username" layoutX="50.0" layoutY="73.0" text="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_resultatsAnalyses" layoutX="15.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Résultats des patients" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
+         <children>
+            <AnchorPane fx:id="form_resultat_analyses" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="632.0">
+                     <children>
+                        <TableView fx:id="resultatAnalyses_tableView" layoutX="14.0" layoutY="65.0" prefHeight="191.0" prefWidth="621.0">
+                           <columns>
+                              <TableColumn fx:id="col_ordreAnalyseId" prefWidth="38.66670227050781" text="Id" />
+                              <TableColumn fx:id="col_Analyse_resultatAnalyse" prefWidth="70.66665649414062" text="Analyse" />
+                              <TableColumn fx:id="col_date_resultatAnalyse" prefWidth="105.99996948242188" text="Date Résultat" />
+                              <TableColumn fx:id="col_valeurKey_resultatAnalyse" prefWidth="134.66665649414062" text="Valeur key" />
+                              <TableColumn fx:id="col_valeurValue_resultatAnalyse" minWidth="8.6666259765625" prefWidth="118.66668701171875" text="Valeur " />
+                              <TableColumn fx:id="col_detail_resultatAnalyse" minWidth="8.6666259765625" prefWidth="152.0" text="Détails" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" onAction="#rechercherResultatAnalyse" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dashboard" layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="355.0" prefWidth="641.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label fx:id="vlr1" layoutX="121.0" layoutY="66.0" text="vlr1" textFill="WHITE" />
+                              <Label layoutX="15.0" layoutY="35.0" text="Total Des Analyses Realisees" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="402.0" layoutY="12.0" prefHeight="132.0" prefWidth="167.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label layoutX="7.0" layoutY="33.0" prefHeight="25.0" prefWidth="178.0" text="Total Analyses Effectuees" textFill="WHITE" />
+                              <Label fx:id="vlr3" layoutX="125.0" layoutY="68.0" text="vlr3" textFill="WHITE" />
+                              <Label layoutX="34.0" layoutY="59.0" text=" Ce Mois" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="211.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="27.0" prefHeight="27.0" prefWidth="128.0" text="Total Analyses Non " textFill="WHITE" />
+                              <Label fx:id="vlr2" layoutX="132.0" layoutY="74.0" text="vlr2" textFill="WHITE" />
+                              <Label layoutX="34.0" layoutY="57.0" text="EffectueesCeMois" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <AreaChart prefHeight="355.0" prefWidth="500.0" visible="false">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </AreaChart>
+                        <Label layoutX="276.0" layoutY="237.0" text="Graphe de" />
+                     </children>
+                  </AnchorPane>
+                  <AreaChart fx:id="graphe" layoutX="40.0" layoutY="276.0" prefHeight="302.0" prefWidth="500.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </AreaChart>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_patient" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="patient_tableView" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_patientId" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_nom_patient" prefWidth="64.6666259765625" text="Nom" />
+                              <TableColumn fx:id="col_prenom_patient" prefWidth="72.66668701171875" text="Prénom" />
+                              <TableColumn fx:id="col_adresse_patient" prefWidth="61.3333740234375" text="Adresse" />
+                              <TableColumn fx:id="col_tele_patient" prefWidth="78.66671752929688" text="Téléphone" />
+                              <TableColumn fx:id="col_mail_patient" prefWidth="78.66671752929688" text="Email" />
+                              <TableColumn fx:id="col_date_naissance_patient" prefWidth="112.6666259765625" text="Date Naissance" />
+                              <TableColumn fx:id="col_nb_ordre" prefWidth="83.333251953125" text="Nb Ordres" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher2" layoutX="24.0" layoutY="24.0" onAction="#rechercherPatient" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+                  <Text fx:id="DetailsResultat" layoutX="81.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" />
+                  <TextField fx:id="adresse_patient" layoutX="148.0" layoutY="415.0" />
+                  <Text layoutX="45.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Naissance" />
+                  <Button fx:id="btn_effacer1" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#effacerChampsPatient" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
+                  <Button fx:id="btn_update1" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" onAction="#mettreAJourPatient" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
+                  <Button fx:id="btn_ajouter1" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterPatient" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
+                  <Button fx:id="btn_supprimer1" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" onAction="#supprimerPatient" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
+                  <DatePicker fx:id="dateNaissance" layoutX="148.0" layoutY="456.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField fx:id="mail_patient" layoutX="438.0" layoutY="397.0" />
+                  <TextField fx:id="tele_patient" layoutX="438.0" layoutY="351.0" />
+                  <Text layoutX="369.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                  <Text layoutX="356.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Téléphone" />
+                  <TextField fx:id="prenom_patient" layoutX="148.0" layoutY="372.0" />
+                  <TextField fx:id="nom_patient" layoutX="148.0" layoutY="326.0" visible="false" />
+                  <Text fx:id="DetailsResultat1" layoutX="81.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+                  <Text fx:id="DetailsResultat2" layoutX="86.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+                  <TextField fx:id="nom_patient" layoutX="144.0" layoutY="323.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_ordreA" layoutX="27.0" layoutY="31.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="ordreAnalyse_tableView" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_ordreAnalyseId" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_date_ordre_analyse" prefWidth="106.66665649414062" text="Date Ordre" />
+                              <TableColumn fx:id="col_patient" prefWidth="80.66668701171875" text="Patient" />
+                              <TableColumn fx:id="col_resultat" prefWidth="370.0000305175781" text="Résultats" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher21" layoutX="24.0" layoutY="24.0" onAction="#rechercherOrdreAnalyse" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+                  <Text fx:id="DetailsResultat1" layoutX="80.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient" />
+                  <TextField fx:id="resultatO" layoutX="148.0" layoutY="415.0" />
+                  <Text layoutX="80.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Ordre" />
+                  <Button fx:id="btn_effacer11" layoutX="141.0" layoutY="526.0" mnemonicParsing="false" onAction="#effacerChampsOrdreA" style="-fx-background-color: #535878;" text="Effacer" textFill="WHITE" />
+                  <Button fx:id="btn_update11" layoutX="375.0" layoutY="526.0" mnemonicParsing="false" onAction="#mettreAJourOrdreResultat" style="-fx-background-color: #535878;" text="Mettre à jour" textFill="WHITE" />
+                  <Button fx:id="btn_ajouter11" layoutX="308.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterOrdreAnalyse" style="-fx-background-color: #535878;" text="Ajouter" textFill="WHITE" />
+                  <Button fx:id="btn_supprimer11" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" onAction="#supprimerOrdreAnalyse" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
+                  <DatePicker fx:id="dateO" layoutX="148.0" layoutY="456.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField fx:id="patientOrdreA" layoutX="148.0" layoutY="372.0" />
+                  <Text fx:id="DetailsResultat21" layoutX="80.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Résultats" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

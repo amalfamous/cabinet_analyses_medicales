@@ -68,26 +68,28 @@
                         <Button fx:id="btn_supprimer" layoutX="215.0" layoutY="526.0" mnemonicParsing="false" onAction="#supprimerAnalyse" style="-fx-background-color: #535878;" text="Supprimer" textFill="WHITE" />
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="dashboard" layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="dashboard" layoutX="100.0" layoutY="95.0" prefHeight="590.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <AnchorPane prefHeight="161.0" prefWidth="580.0">
+                        <AnchorPane prefHeight="355.0" prefWidth="641.0">
                             <children>
                                 <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
                                     <children>
                                         <Label fx:id="vlr1" layoutX="121.0" layoutY="66.0" text="vlr1" textFill="WHITE" />
-                                        <Label layoutX="47.0" layoutY="39.0" text="Label" textFill="WHITE" />
+                                        <Label layoutX="29.0" layoutY="39.0" text="Total Des Analyses Realisees" textFill="WHITE" />
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane layoutX="402.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
+                                <AnchorPane layoutX="402.0" layoutY="12.0" prefHeight="132.0" prefWidth="167.0" style="-fx-background-color: #535878;">
                                     <children>
-                                        <Label layoutX="42.0" layoutY="34.0" text="Label" textFill="WHITE" />
+                                        <Label layoutX="7.0" layoutY="33.0" prefHeight="25.0" prefWidth="178.0" text="Total Analyses Effectuees" textFill="WHITE" />
                                         <Label fx:id="vlr3" layoutX="125.0" layoutY="68.0" text="vlr3" textFill="WHITE" />
+                              <Label layoutX="34.0" layoutY="59.0" text=" Ce Mois" textFill="WHITE" />
                                     </children>
                                 </AnchorPane>
                                 <AnchorPane layoutX="211.0" layoutY="12.0" prefHeight="132.0" prefWidth="178.0" style="-fx-background-color: #535878;">
                                     <children>
-                                        <Label layoutX="32.0" layoutY="38.0" text="Label" textFill="WHITE" />
+                                        <Label layoutX="14.0" layoutY="27.0" prefHeight="27.0" prefWidth="128.0" text="Total Analyses Non " textFill="WHITE" />
                                         <Label fx:id="vlr2" layoutX="123.0" layoutY="63.0" text="vlr2" textFill="WHITE" />
+                              <Label layoutX="34.0" layoutY="57.0" text="EffectueesCeMois" textFill="WHITE" />
                                     </children>
                                 </AnchorPane>
                                 <AreaChart prefHeight="355.0" prefWidth="500.0" visible="false">
@@ -111,7 +113,7 @@
                         </AreaChart>
                     </children>
                 </AnchorPane>
-            <AnchorPane fx:id="form_ordreAnalyses" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+            <AnchorPane fx:id="form_ordreAnalyses" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
                <children>
                   <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="580.0">
                      <children>

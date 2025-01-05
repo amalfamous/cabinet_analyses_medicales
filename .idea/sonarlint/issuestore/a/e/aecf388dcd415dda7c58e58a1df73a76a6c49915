@@ -1,8 +1,8 @@
 
 …
-java:S1192®"bDefine a constant instead of duplicating this literal "-fx-background-color: transparent" 6 times.(¡Ğáèûÿÿÿÿ8Îáù‰Ã2
+java:S1192³"bDefine a constant instead of duplicating this literal "-fx-background-color: transparent" 6 times.(¡Ğáèûÿÿÿÿ8Îáù‰Ã2
 –
-java:S1192­"sDefine a constant instead of duplicating this literal "linear-gradient(to bottom right,#535878, #9DB0CE);" 3 times.(¾ö¾Óùÿÿÿÿ8î¾¾âÂ2
+java:S1192²"sDefine a constant instead of duplicating this literal "linear-gradient(to bottom right,#535878, #9DB0CE);" 3 times.(¾ö¾Óùÿÿÿÿ8î¾¾âÂ2
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ö¾¾âÂ2
 q	java:S116!"URename this field "Valeur_key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÿÅù8ıèù‰Ã2
 r	java:S116$"WRename this field "Valeur_value" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùïì/8ıèù‰Ã2
@@ -35,29 +35,29 @@ y	java:S116q"]Rename this field "col_ordreAnalyseId" to match the regular expr
 z	java:S116€"XRename this field "form_analyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×¯Íşÿÿÿÿÿ8éù‰Ã2
 z	java:S116ƒ"]Rename this field "form_ordreAnalyses" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ°ÅÕ8éù‰Ã2
 Ÿ
-java:S1186›"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8éù‰Ã2
+java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é¯¯®8éù‰Ã2
 ¤
-java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8‘éù‰Ã2
+java:S1186¥"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÕ²ûÿÿÿÿ8‘éù‰Ã2
 ¤
-java:S1186â"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8’éù‰Ã2
+java:S1186ç"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÙµÕ˜ùÿÿÿÿ8’éù‰Ã2
 
 java:S1845}"bRename field "detailsResultat" to prevent any misunderstanding/clash with field "DetailsResultat".(¤ççğ8”éù‰Ã2
 F
-java:S1481Õ")Remove this unused "root" local variable.(šĞÿ8›€ú‰Ã2
+java:S1481Ú")Remove this unused "root" local variable.(šĞÿ8›€ú‰Ã2
 q
-java:S1602¹"SRemove useless curly braces around statement and then remove useless return keyword(´¦Û‡8·€ú‰Ã2
-^	java:S125Î"<This block of commented-out lines of code should be removed.(ƒ’ºáùÿÿÿÿ8Ñ€ú‰Ã2
-H	java:S106ÿ"+Replace this use of System.out by a logger.(¬öÕê8Éº½‡Ã2
-M	java:S106"+Replace this use of System.out by a logger.(ÿˆ‚Òûÿÿÿÿ8Êº½‡Ã2
-M	java:S106"+Replace this use of System.out by a logger.(šÄ‘§ùÿÿÿÿ8×â‡Ã2
-M	java:S106"+Replace this use of System.out by a logger.(”ÆÚéûÿÿÿÿ8Ô€ú‰Ã2
-H	java:S106"+Replace this use of System.out by a logger.(½…ÆÔ8Ô€ú‰Ã2
-G	java:S106‘"+Replace this use of System.out by a logger.(º“§]8Ô€ú‰Ã2
-Y	java:S125©"<This block of commented-out lines of code should be removed.(ôèÄÓ8×€ú‰Ã2
-Y	java:S125·"<This block of commented-out lines of code should be removed.(ôèÄÓ8¿†…ŠÃ2
+java:S1602¾"SRemove useless curly braces around statement and then remove useless return keyword(´¦Û‡8·€ú‰Ã2
+^	java:S125Ó"<This block of commented-out lines of code should be removed.(ƒ’ºáùÿÿÿÿ8Ñ€ú‰Ã2
+H	java:S106„"+Replace this use of System.out by a logger.(¬öÕê8Éº½‡Ã2
+M	java:S106†"+Replace this use of System.out by a logger.(ÿˆ‚Òûÿÿÿÿ8Êº½‡Ã2
+M	java:S106“"+Replace this use of System.out by a logger.(šÄ‘§ùÿÿÿÿ8×â‡Ã2
+M	java:S106”"+Replace this use of System.out by a logger.(”ÆÚéûÿÿÿÿ8Ô€ú‰Ã2
+H	java:S106•"+Replace this use of System.out by a logger.(½…ÆÔ8Ô€ú‰Ã2
+G	java:S106–"+Replace this use of System.out by a logger.(º“§]8Ô€ú‰Ã2
+Y	java:S125®"<This block of commented-out lines of code should be removed.(ôèÄÓ8×€ú‰Ã2
+Y	java:S125¼"<This block of commented-out lines of code should be removed.(ôèÄÓ8¿†…ŠÃ2
 Y
-java:S1128"7Remove this unused import 'javafx.scene.chart.XYChart'.(„¯„ıÿÿÿÿ8Ô£ı‰Ã2
+java:S1128"7Remove this unused import 'javafx.scene.chart.XYChart'.(„¯„ıÿÿÿÿ8­•˜Ã2
 S
-java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8ä£ı‰Ã2
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8¡ùıÃ2
 R
-java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ô£ı‰Ã2
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8¡ùıÃ2

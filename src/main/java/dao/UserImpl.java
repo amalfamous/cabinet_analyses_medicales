@@ -160,5 +160,20 @@ public class UserImpl implements IDao<User> {
         }
         em.getTransaction().commit();
     }
+    public int getUserIdByUsername(String username) {
+        try {
+            // Chercher l'utilisateur par son nom d'utilisateur
+            User user = em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                    .setParameter("username", username)
+                    .getSingleResult();
+
+            if (user != null) {
+                return (int) user.getId();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
 }

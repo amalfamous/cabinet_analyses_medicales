@@ -4,11 +4,14 @@ import dao.LaborantinImpl;
 import entites.Laborantin;
 
 import java.util.List;
+import java.util.Map;
 
 public class TestLaborantin {
 
     public static void main(String[] args) {
         LaborantinImpl laborantinDao = new LaborantinImpl();
+
+
         System.out.println("=== Test: CREATE ===");
         Laborantin laborantin = new Laborantin();
         laborantin.setNom("Dupont");
@@ -29,7 +32,7 @@ public class TestLaborantin {
         if (laborantinToUpdate != null) {
             laborantinToUpdate.setNom("Dupont - Mise à jour");
             laborantinToUpdate.setPrenom("Jean - Mise à jour");
-            laborantinDao.update((long) laborantinToUpdate.getId(), laborantinToUpdate); // Mise à jour du Laborantin
+            laborantinDao.update((long) laborantinToUpdate.getId(), laborantinToUpdate);
             System.out.println("Laborantin mis à jour avec succès.");
         } else {
             System.out.println("Laborantin non trouvé.");
@@ -43,7 +46,7 @@ public class TestLaborantin {
         System.out.println("\n=== Test: DELETE ===");
         Laborantin laborantinToDelete = laborantinDao.findById((long) laborantin.getId());
         if (laborantinToDelete != null) {
-            laborantinDao.delete((long) laborantinToDelete.getId()); // Suppression du Laborantin
+            laborantinDao.delete((long) laborantinToDelete.getId());
             System.out.println("Laborantin supprimé avec succès.");
         } else {
             System.out.println("Laborantin non trouvé.");

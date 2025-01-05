@@ -24,9 +24,9 @@ public class OrdreAnalyseImpl implements IDao<OrdreAnalyse>{
             if (ordreAnalyse.getMedecin() != null) {
                 ordreAnalyse.setMedecin(em.merge(ordreAnalyse.getMedecin()));
             }
-            if (ordreAnalyse.getResultatAnalyses() != null) {
+           /* if (ordreAnalyse.getResultatAnalyses() != null) {
                 ordreAnalyse.setResultatAnalyses(em.merge(ordreAnalyse.getResultatAnalyses()));
-            }
+            }*/
             if (ordreAnalyse.getPatient() != null) {
                 ordreAnalyse.setPatient(em.merge(ordreAnalyse.getPatient()));
             }
@@ -35,6 +35,14 @@ public class OrdreAnalyseImpl implements IDao<OrdreAnalyse>{
             }
 
             em.persist(ordreAnalyse);
+
+            // On persiste les entités liées si nécessaire
+            if (ordreAnalyse.getResultatAnalyses() != null) {
+                for (ResultatAnalyse resultatAnalyse : ordreAnalyse.getResultatAnalyses()) {
+                    resultatAnalyse.setOrdreAnalyse(ordreAnalyse); // Assurez-vous de bien lier les ResultatAnalyse à OrdreAnalyse
+                    em.persist(resultatAnalyse); // Si nécessaire, persistez chaque ResultatAnalyse explicitement
+                }
+            }
             em.getTransaction().commit();
         }catch (Exception e){
             em.getTransaction().rollback();
@@ -48,10 +56,26 @@ public class OrdreAnalyseImpl implements IDao<OrdreAnalyse>{
         OrdreAnalyse o=em.find(OrdreAnalyse.class,id);
         if (o!=null){
             if (ordreAnalyse.getDateOrdre()!=null) o.setDateOrdre(ordreAnalyse.getDateOrdre());
+/*
             if (ordreAnalyse.getResultatAnalyses()!=null) o.setResultatAnalyses(ordreAnalyse.getResultatAnalyses());
+*/
+            if (ordreAnalyse.getResultatAnalyses() != null) {
+                // Traitez les entités ResultatAnalyse
+                for (ResultatAnalyse resultatAnalyse : ordreAnalyse.getResultatAnalyses()) {
+                    if (resultatAnalyse.getId() != 0) {
+                        // Si l'entité ResultatAnalyse existe déjà (c'est-à-dire qu'elle a un ID), utilisez merge
+                        em.merge(resultatAnalyse);
+                    } else {
+                        // Si c'est une nouvelle entité (pas d'ID), on persiste
+                        em.persist(resultatAnalyse);
+                    }
+                }
+                o.setResultatAnalyses(ordreAnalyse.getResultatAnalyses());
+            }
             if (ordreAnalyse.getFacture()!=null) o.setFacture(ordreAnalyse.getFacture());
             if (ordreAnalyse.getPatient()!=null) o.setPatient(ordreAnalyse.getPatient());
             if (ordreAnalyse.getMedecin()!=null) o.setMedecin(ordreAnalyse.getMedecin());
+            em.merge(o);
         }
         em.getTransaction().commit();
     }
