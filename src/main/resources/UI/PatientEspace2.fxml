@@ -31,7 +31,7 @@
       </AnchorPane>
       <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
          <children>
-            <AnchorPane fx:id="form_resultatAnalyse" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+            <AnchorPane fx:id="form_resultatAnalyse" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
                <children>
                   <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="632.0">
                      <children>
@@ -48,6 +48,8 @@
                         <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" onAction="#rechercherResultatAnalyse" promptText="Rechercher" />
                      </children>
                   </AnchorPane>
+                  <Button fx:id="button_download_resultat" layoutX="68.0" layoutY="354.0" mnemonicParsing="false" onAction="#telechargerResultatAnalyse" prefHeight="32.0" prefWidth="248.0" style="-fx-background-color: #535878;" text="Telecharger tout les resultat d'analyse (PDF)" textFill="WHITE" />
+                  <Button fx:id="button_download_resultat1" layoutX="343.0" layoutY="354.0" mnemonicParsing="false" onAction="#telechargerResultatAnalyseCSV" prefHeight="32.0" prefWidth="248.0" style="-fx-background-color: #535878;" text="Telecharger tout les resultat d'analyse (CSV)" textFill="WHITE" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="form_facture" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
@@ -67,7 +69,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="form_ordreA" layoutX="27.0" layoutY="31.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+            <AnchorPane fx:id="form_ordreA" layoutX="27.0" layoutY="31.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
                <children>
                   <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
                      <children>

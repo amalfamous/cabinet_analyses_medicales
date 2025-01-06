@@ -32,11 +32,17 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private PasswordField tf_password;
-
+    @FXML
+    private Hyperlink motOublie;
     @FXML
     private TextField tf_username;
 
     private Alert alert;
+    @FXML
+    private PasswordField MotPasseOublie;
+
+    @FXML
+    private TextField emailField;
 
     private void errorMessage(String message){
         alert=new Alert(Alert.AlertType.ERROR);
@@ -86,6 +92,7 @@ public class FXMLDocumentController implements Initializable {
                         errorMessage("Rôle inconnu !");
                         return;
                     }
+                    // Ouvrir une nouvelle fenêtre avec l'interface correspondante
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
                     stage.show();
@@ -102,13 +109,12 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-
+    // Méthode pour changer d'interface selon la sélection dans la ComboBox
     public void switchForm(ActionEvent event) {
         try{
             Parent root=null;
             if (admin_user.getSelectionModel().getSelectedItem().equals("espace patient")) {
                 root= FXMLLoader.load(getClass().getResource("/UI/PatientEspace.fxml"));
-
             }
             else if (admin_user.getSelectionModel().getSelectedItem().equals("espace laborantin")){
                 root= FXMLLoader.load(getClass().getResource("/UI/laborantinEspace.fxml"));
@@ -119,6 +125,7 @@ public class FXMLDocumentController implements Initializable {
             else if (admin_user.getSelectionModel().getSelectedItem().equals("espace admin")){
                 root= FXMLLoader.load(getClass().getResource("/UI/login.fxml"));
             }
+            // Ouvrir la nouvelle fenêtre et fermer l'actuelle
             Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -150,10 +157,30 @@ public class FXMLDocumentController implements Initializable {
         primaryStage.setTitle("Formulaire d'inscription");
         primaryStage.centerOnScreen();
     }
+    @FXML
+    void motPasseOublie(ActionEvent event) {
+        try {
+            // Charger la vue ForgotPassword.fxml
+            Parent root = null;
+            root=FXMLLoader.load(getClass().getResource("/UI/ForgotPassword.fxml"));
+            // Créer une nouvelle scène pour la réinitialisation du mot de passe
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Réinitialiser le mot de passe");
+            stage.show();
 
+            // Fermer la fenêtre actuelle (page de connexion)
+            ((Stage) motOublie.getScene().getWindow()).close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            errorMessage("Erreur lors du chargement de la page de réinitialisation.");
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         selectUser();
     }
+
+
 }

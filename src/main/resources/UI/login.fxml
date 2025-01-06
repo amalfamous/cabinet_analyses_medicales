@@ -28,7 +28,7 @@
             <TextField fx:id="tf_username" layoutX="100.0" layoutY="187.0" promptText="Nom d'utilisateur" style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px; -fx-background: none;" />
             <PasswordField fx:id="tf_password" layoutX="101.0" layoutY="238.0" promptText="Mot de passe " style="-fx-background-color: transparent; -fx-border-color: #535878; -fx-border-width: 0px 0px 2px 0px;" />
             <Button fx:id="button_loggin" layoutX="134.0" layoutY="290.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #535878;" text="Connexion" textFill="WHITE" />
-            <Hyperlink layoutX="113.0" layoutY="446.0" text="Mot de passe oublié ?" />
+            <Hyperlink fx:id="motOublie" layoutX="113.0" layoutY="446.0" onAction="#motPasseOublie" text="Mot de passe oublié ?" />
             <Text fill="#535878" layoutX="117.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connexion">
                <font>
                   <Font size="24.0" />

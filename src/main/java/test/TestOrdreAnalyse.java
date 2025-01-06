@@ -36,7 +36,7 @@ public class TestOrdreAnalyse {
 
         System.out.println("\n=== Mise à jour de l'ordre d'analyse ===");
         if (!ordreAnalyses.isEmpty()) {
-            OrdreAnalyse ordreToUpdate = ordreAnalyses.get(0);
+            OrdreAnalyse ordreToUpdate = ordreAnalyses.get(38);
             ordreToUpdate.setDateOrdre(LocalDateTime.now().minusDays(1));
             ordreAnalyseDao.update((long) ordreToUpdate.getId(), ordreToUpdate);
 
@@ -45,7 +45,7 @@ public class TestOrdreAnalyse {
                     ", Date: " + updatedOrdre.getDateOrdre());
         }
 
-        System.out.println("\n=== Suppression de l'ordre d'analyse ===");
+       System.out.println("\n=== Suppression de l'ordre d'analyse ===");
         if (!ordreAnalyses.isEmpty()) {
             OrdreAnalyse ordreToDelete = ordreAnalyses.get(0);
             try {

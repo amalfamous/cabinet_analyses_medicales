@@ -130,4 +130,12 @@ public class ResultatAnalyseImpl implements IDao<ResultatAnalyse>{
     public List<ResultatAnalyse> findAll() {
         return em.createQuery("SELECT r FROM ResultatAnalyse r", ResultatAnalyse.class).getResultList();
     }
+
+   /* public List<ResultatAnalyse> findByPatientId(int patientId) {
+        return em.createQuery(
+                        "SELECT r FROM ResultatAnalyse r WHERE r.ordreAnalyse.patient.id = :patientId", ResultatAnalyse.class)
+                .setParameter("patientId", patientId)
+                .getResultList();
+    }*/
+
 }

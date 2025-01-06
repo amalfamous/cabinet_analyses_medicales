@@ -1,11 +1,13 @@
 package Controller;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
 import dao.FactureImpl;
 import dao.OrdreAnalyseImpl;
 import dao.ResultatAnalyseImpl;
-import entites.Facture;
-import entites.OrdreAnalyse;
-import entites.ResultatAnalyse;
+import dao.UserImpl;
+import entites.*;
+import jakarta.persistence.Table;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,10 +19,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import java.io.*;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,6 +34,15 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.DocumentException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableView;
 public class PatientController implements Initializable {
 
     @FXML
@@ -117,6 +132,131 @@ public class PatientController implements Initializable {
     @FXML
     private Label username;
 
+
+    @FXML
+    private Button button_download_resultat;
+
+    // Méthode utilitaire pour ajouter un en-tête de colonne
+    private void addTableHeader(PdfPTable table, String headerTitle) {
+        PdfPCell header = new PdfPCell(new Phrase(headerTitle));
+        header.setHorizontalAlignment(Element.ALIGN_CENTER);
+        header.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        table.addCell(header);
+    }
+    public void telechargerResultatAnalyse() {
+        // Récupérer les données à partir de votre DAO
+        ResultatAnalyseImpl resultatAnalyseDao = new ResultatAnalyseImpl();
+        List<ResultatAnalyse> resultatAnalyses = resultatAnalyseDao.findAll();
+
+        // Utiliser un FileChooser pour permettre à l'utilisateur de choisir l'emplacement du fichier
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        File file = fileChooser.showSaveDialog(new Stage());
+
+        if (file != null) {
+            try {
+                // Initialisation du PDF
+                Document document = new Document();
+                PdfWriter.getInstance(document, new FileOutputStream(file));
+                document.open();
+
+                // Ajouter un titre
+                Font titleFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
+                Paragraph title = new Paragraph("Rapport des Résultats d'Analyse", titleFont);
+                title.setAlignment(Element.ALIGN_CENTER);
+                document.add(title);
+                document.add(new Paragraph("\n")); // Saut de ligne
+
+                // Créer une table avec 6 colonnes
+                PdfPTable table = new PdfPTable(6);
+                table.setWidthPercentage(100); // Largeur de la table
+                table.setSpacingBefore(10f); // Espacement avant la table
+                table.setSpacingAfter(10f); // Espacement après la table
+
+                // Définir les largeurs des colonnes
+                table.setWidths(new float[]{1, 3, 2, 2, 3, 3});
+
+                // Ajouter les en-têtes de colonnes
+                addTableHeader(table, "ID");
+                addTableHeader(table, "Analyse");
+                addTableHeader(table, "Date Résultat");
+                addTableHeader(table, "Clés");
+                addTableHeader(table, "Valeurs");
+                addTableHeader(table, "Détails");
+
+                // Ajouter les données des résultats d'analyse
+                for (ResultatAnalyse resultat : resultatAnalyses) {
+                    String id = String.valueOf(resultat.getId());
+                    String analyseNom = (resultat.getAnalyse() != null) ? resultat.getAnalyse().getNom() : "N/A";
+                    String dateResultat = (resultat.getDateResultat() != null) ? resultat.getDateResultat().toString() : "N/A";
+                    String keys = String.join(", ", resultat.getValeurs().keySet());
+                    String values = String.join(", ", resultat.getValeurs().values().stream().map(String::valueOf).toList());
+                    String details = (resultat.getDetailsResultat() != null) ? resultat.getDetailsResultat() : "N/A";
+
+                    // Ajouter les cellules à la table
+                    table.addCell(new PdfPCell(new Phrase(id)));
+                    table.addCell(new PdfPCell(new Phrase(analyseNom)));
+                    table.addCell(new PdfPCell(new Phrase(dateResultat)));
+                    table.addCell(new PdfPCell(new Phrase(keys)));
+                    table.addCell(new PdfPCell(new Phrase(values)));
+                    table.addCell(new PdfPCell(new Phrase(details)));
+                }
+
+                // Ajouter la table au document
+                document.add(table);
+
+                // Fermer le document
+                document.close();
+
+                // Message de confirmation
+                System.out.println("Le fichier PDF a été généré avec succès : " + file.getAbsolutePath());
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println("Erreur lors de la génération du fichier PDF : " + e.getMessage());
+            }
+        }
+    }
+
+    public void telechargerResultatAnalyseCSV() {
+        // Obtenez la liste des résultats d'analyse
+        ResultatAnalyseImpl resultatAnalyseDao = new ResultatAnalyseImpl();
+        List<ResultatAnalyse> resultatAnalyses = resultatAnalyseDao.findAll();
+
+        // Créer un FileChooser pour choisir le chemin et le nom du fichier
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        File file = fileChooser.showSaveDialog(new Stage());
+
+        if (file != null) {
+            // Si l'utilisateur a choisi un fichier, on continue
+            try (FileWriter writer = new FileWriter(file)) {
+                // Écrire l'en-tête du fichier CSV
+                writer.append("ID,Analyse,Date Résultat,Clés,Valeurs,Détails\n");
+
+                // Parcourir les résultats et les écrire dans le fichier CSV
+                for (ResultatAnalyse resultat : resultatAnalyses) {
+                    // Préparer les données à écrire : ID, Nom de l'analyse, Date, etc.
+                    String id = String.valueOf(resultat.getId());
+                    String analyseNom = (resultat.getAnalyse() != null) ? resultat.getAnalyse().getNom() : "N/A";
+                    String dateResultat = (resultat.getDateResultat() != null) ? resultat.getDateResultat().toString() : "N/A";
+                    String keys = String.join(", ", resultat.getValeurs().keySet());
+                    String values = String.join(", ", resultat.getValeurs().values().stream().map(String::valueOf).toList());
+                    String details = (resultat.getDetailsResultat() != null) ? resultat.getDetailsResultat() : "N/A";
+
+                    // Écrire la ligne dans le fichier CSV
+                    writer.append(String.join(",", id, analyseNom, dateResultat, keys, values, details));
+                    writer.append("\n");
+                }
+
+                // Message de confirmation
+                System.out.println("Les résultats ont été exportés avec succès dans : " + file.getAbsolutePath());
+            } catch (IOException e) {
+                // Si une erreur survient lors de l'écriture dans le fichier
+                e.printStackTrace();
+                System.err.println("Erreur lors de l'exportation des résultats : " + e.getMessage());
+            }
+        }}
     @FXML
     void logout() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -224,10 +364,42 @@ public class PatientController implements Initializable {
         resultatAnalyses_tableView.refresh();
     }
 
-
     public void displayUsername() {
+        System.out.println("getData.username: " + getData.username);
         username.setText(getData.username);
     }
+
+    public void loadResultatsAnalyses() {
+        ResultatAnalyseImpl resultatAnalyseDao = new ResultatAnalyseImpl();
+        List<ResultatAnalyse> resultatAnalyses = resultatAnalyseDao.findAll();
+
+        col_resultatAnalyseId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        col_Analyse_resultatAnalyse.setCellValueFactory(data -> {
+            ResultatAnalyse resultat = data.getValue();// Récupère un objet ResultatAnalyse pour la ligne actuelle
+            if (resultat != null && resultat.getAnalyse() != null) {
+                return new SimpleStringProperty(resultat.getAnalyse().getNom());
+            }
+            return new SimpleStringProperty("N/A");
+        });
+        col_date_resultatAnalyse.setCellValueFactory(new PropertyValueFactory<>("dateResultat"));
+        col_valeurValue_resultatAnalyse.setCellValueFactory(data -> {
+            // Extraire les valeurs de la carte
+            String values = data.getValue().getValeurs().values().stream()
+                    .map(String::valueOf)
+                    .collect(Collectors.joining(", "));
+            return new SimpleStringProperty(values);
+        });
+        col_valeurKey_resultatAnalyse.setCellValueFactory(data -> {
+            // Extraire les clés de la carte
+            String keys = String.join(", ", data.getValue().getValeurs().keySet());
+            return new SimpleStringProperty(keys);
+        });
+        col_detail_resultatAnalyse.setCellValueFactory(new PropertyValueFactory<>("detailsResultat"));
+
+        ObservableList<ResultatAnalyse> resultatAnalyseObservableList = FXCollections.observableArrayList(resultatAnalyses);
+        resultatAnalyses_tableView.setItems(resultatAnalyseObservableList);
+    }
+
 
     public void switchForm(ActionEvent event) {
         if (event.getSource() == button_factures) {
@@ -260,38 +432,6 @@ public class PatientController implements Initializable {
 
     }
 
-    public void loadResultatsAnalyses() {
-        ResultatAnalyseImpl resultatAnalyseDao = new ResultatAnalyseImpl();
-        List<ResultatAnalyse> resultatAnalyses = resultatAnalyseDao.findAll();
-
-        col_resultatAnalyseId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        col_detail_resultatAnalyse.setCellValueFactory(new PropertyValueFactory<>("detailsResultat"));
-        col_date_resultatAnalyse.setCellValueFactory(new PropertyValueFactory<>("dateResultat"));
-
-        col_Analyse_resultatAnalyse.setCellValueFactory(data -> {
-            ResultatAnalyse resultat = data.getValue();// Récupère un objet ResultatAnalyse pour la ligne actuelle
-            if (resultat != null && resultat.getAnalyse() != null) {
-                return new SimpleStringProperty(resultat.getAnalyse().getNom());
-            }
-            return new SimpleStringProperty("N/A");
-        });
-
-        col_valeurKey_resultatAnalyse.setCellValueFactory(data -> {
-            // Extraire les clés de la carte
-            String keys = String.join(", ", data.getValue().getValeurs().keySet());
-            return new SimpleStringProperty(keys);
-        });
-
-        col_valeurValue_resultatAnalyse.setCellValueFactory(data -> {
-            // Extraire les valeurs de la carte
-            String values = data.getValue().getValeurs().values().stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining(", "));
-            return new SimpleStringProperty(values);
-        });
-        ObservableList<ResultatAnalyse> resultatAnalyseObservableList = FXCollections.observableArrayList(resultatAnalyses);
-        resultatAnalyses_tableView.setItems(resultatAnalyseObservableList);
-    }
 
     public void loadFacture() {
         FactureImpl factureDao = new FactureImpl();
@@ -300,8 +440,21 @@ public class PatientController implements Initializable {
         col_factureId.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_montantTotal.setCellValueFactory(new PropertyValueFactory<>("montantTotal"));
         col_dateFacture.setCellValueFactory(new PropertyValueFactory<>("dateFacture"));
+        //col_etatPaiementF.setCellValueFactory(new PropertyValueFactory<>("etatPaiement"));
+
         col_etatPaiementF.setCellValueFactory(new PropertyValueFactory<>("etatPaiement"));
 
+        col_etatPaiementF.setCellFactory(column -> new TableCell<Facture, Boolean>() {
+            @Override
+            protected void updateItem(Boolean etatPaiement, boolean empty) {
+                super.updateItem(etatPaiement, empty);
+                if (empty || etatPaiement == null) {
+                    setText(null);
+                } else {
+                    setText(etatPaiement ? "Payé" : "Non payé");
+                }
+            }
+        });
         ObservableList<Facture> factureObservableList = FXCollections.observableArrayList(factures);
         facture_tableView.setItems(factureObservableList);
     }

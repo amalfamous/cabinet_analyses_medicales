@@ -19,7 +19,6 @@ public class UserImpl implements IDao<User> {
         em = emf.createEntityManager();
     }
 
-
     @Override
     public void create(User user) {
         try {
@@ -55,7 +54,6 @@ public class UserImpl implements IDao<User> {
             e.printStackTrace();
         }
     }
-
 
    /* @Override
     public void create(User user) {
@@ -132,7 +130,6 @@ public class UserImpl implements IDao<User> {
         return em.createQuery("SELECT u FROM User u", User.class).getResultList();
     }
 
-
     public User authenticate(String username, String password) {
         try {
             // Trouver l'utilisateur avec le nom d'utilisateur
@@ -175,5 +172,6 @@ public class UserImpl implements IDao<User> {
         }
         return 0;
     }
+
 
 }

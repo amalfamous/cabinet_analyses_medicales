@@ -1,26 +1,20 @@
 
 R
-java:S3740ú"/Provide the parametrized type for this generic.(øêíøÿÿÿÿ8ÅèŒÂ2
+java:S3740®"/Provide the parametrized type for this generic.(øêíøÿÿÿÿ8ÅèŒÂ2
 d
-java:S1192C"GDefine a constant instead of duplicating this literal "Erreur" 4 times.(İ¥ùÈ8…ØÔŒÂ2
+java:S1192D"GDefine a constant instead of duplicating this literal "Erreur" 4 times.(İ¥ùÈ8…ØÔŒÂ2
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8êˆ“‹Â2
-{	java:S116"ZRename this field "button_register" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôâì’ıÿÿÿÿ8ØºŒÂ2
-y	java:S116$"]Rename this field "tf_confirmPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’´å»8ØºŒÂ2
-r	java:S116'"QRename this field "tf_nom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇåÀ©øÿÿÿÿ8ØºŒÂ2
-w	java:S116*"VRename this field "tf_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïà×‘şÿÿÿÿ8ÙºŒÂ2
-p	java:S116-"TRename this field "tf_prenom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÚŠ®8ÙºŒÂ2
-s	java:S1160"WRename this field "tf_telephone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ÓÛ8ÚºŒÂ2
-q	java:S1163"VRename this field "tf_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã«Ñs8ÚºŒÂ2
-^	java:S125"<This block of commented-out lines of code should be removed.(ÖÍŒÃüÿÿÿÿ8Ô»ÔŒÂ2
+{	java:S116"ZRename this field "button_register" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôâì’ıÿÿÿÿ8ØºŒÂ2
+y	java:S116""]Rename this field "tf_confirmPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’´å»8ØºŒÂ2
+r	java:S116%"QRename this field "tf_nom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇåÀ©øÿÿÿÿ8ØºŒÂ2
+w	java:S116("VRename this field "tf_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïà×‘şÿÿÿÿ8ÙºŒÂ2
+p	java:S116+"TRename this field "tf_prenom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÚŠ®8ÙºŒÂ2
+s	java:S116."WRename this field "tf_telephone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ÓÛ8ÚºŒÂ2
+q	java:S1161"VRename this field "tf_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã«Ñs8ÚºŒÂ2
+y	java:S1164"XRename this field "button_sortir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÇ¿åûÿÿÿÿ8©ŸäéÃ2
+F
+java:S1481œ")Remove this unused "root" local variable.(šĞÿ8Ñ‰æéÃ2
 w
-java:S3012ø"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(”Í€8¯»ŒÂ2
-U
-java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8ÊğŒÂ2
-M
-java:S1128"0Remove this unused import 'javafx.scene.Parent'.(²ä¡È8ÊğŒÂ2
-L
-java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²8ËğŒÂ2
-Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8ËğŒÂ2
+java:S3012¬"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(”Í€8¯»ŒÂ2
 R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ËğŒÂ2
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ÍæéÃ2

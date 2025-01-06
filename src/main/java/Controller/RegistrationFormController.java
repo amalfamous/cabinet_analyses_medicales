@@ -13,16 +13,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class RegistrationFormController implements Initializable {
@@ -49,6 +47,9 @@ public class RegistrationFormController implements Initializable {
 
     @FXML
     private TextField tf_username;
+
+    @FXML
+    private Button button_sortir;
 
     @FXML
     public void register(ActionEvent event) {
@@ -139,107 +140,30 @@ public class RegistrationFormController implements Initializable {
         alert.showAndWait();
     }
 
-/*
     @FXML
-    public void register(ActionEvent event) {
+    void logout() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Message de confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Êtes-vous sûr de vouloir sortir ?");
+
+        // Récupérer la réponse de l'utilisateur
+        Optional<ButtonType> option = alert.showAndWait();
         try {
-            // Récupérer les données du formulaire
-            String nom = tf_nom.getText();
-            String prenom = tf_prenom.getText();
-            String username = tf_username.getText();
-            String password = tf_password.getText();
-            String confirmPassword = tf_confirmPassword.getText();
-            String telephone = tf_telephone.getText();
-            String selectedRole = options.getValue(); // Récupérer la valeur sélectionnée
-
-            // Vérifications simples (exemple)
-            if (nom.isEmpty() || prenom.isEmpty() || username.isEmpty() || password.isEmpty() || selectedRole == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Erreur");
-                alert.setHeaderText("Champs manquants");
-                alert.setContentText("Veuillez remplir tous les champs obligatoires.");
-                alert.showAndWait();
-                return;
+            if (option.isPresent() && option.get() == ButtonType.OK) {
+                Stage currentStage = (Stage) button_sortir.getScene().getWindow();
+                currentStage.close();
+                Parent root = null;
+                Stage stage = new Stage();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/UI/login.fxml")));
+                stage.setScene(scene);
+                stage.setTitle("Login");
+                stage.show();
             }
-
-            if (!password.equals(confirmPassword)) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Erreur");
-                alert.setHeaderText("Mot de passe incorrect");
-                alert.setContentText("Les mots de passe ne correspondent pas.");
-                alert.showAndWait();
-                return;
-            }
-
-            // Créer un nouvel utilisateur
-            User user = new User();
-            user.setUsername(username);
-            user.setPassword(password); // Le mot de passe sera hashé dans le DAO
-            user.setRole(selectedRole);
-
-            // Associer un patient, laborantin ou médecin selon le rôle
-            switch (selectedRole) {
-                case "ROLE_PATIENT":
-                    Patient patient = new Patient();
-                    patient.setNom(nom);
-                    patient.setPrenom(prenom);
-                    patient.setTelephone(telephone);
-                    patient.setUser(user); // Associer le patient à l'utilisateur
-                    user.setPatient(patient); // Associer l'utilisateur au patient
-                    break;
-
-                case "ROLE_LABORANTIN":
-                    Laborantin laborantin = new Laborantin();
-                    laborantin.setNom(nom);
-                    laborantin.setPrenom(prenom);
-                    laborantin.setTelephone(telephone);
-                    laborantin.setUser(user);
-                    user.setLaborantin(laborantin);
-                    break;
-
-                case "ROLE_MEDECIN":
-                    Medecin medecin = new Medecin();
-                    medecin.setNom(nom);
-                    medecin.setPrenom(prenom);
-                    medecin.setTelephone(telephone);
-                    medecin.setUser(user);
-                    user.setMedecin(medecin);
-                    break;
-                case "ROLE_ADMIN":
-                    // L'Admin n'a pas besoin d'objet associé comme Patient, Médecin ou Laborantin
-                    break;
-
-                default:
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur");
-                    alert.setHeaderText("Rôle invalide");
-                    alert.setContentText("Veuillez sélectionner un rôle valide.");
-                    alert.showAndWait();
-                    return;
-            }
-
-            // Enregistrer l'utilisateur dans la base de données
-            UserImpl userDao = new UserImpl();
-            userDao.create(user);
-
-            // Afficher une alerte de succès
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Succès");
-            alert.setHeaderText("Inscription réussie");
-            alert.setContentText("L'utilisateur a été enregistré avec succès !");
-            alert.showAndWait();
-
         } catch (Exception e) {
             e.printStackTrace();
-            // Afficher une alerte d'erreur en cas d'exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText("Erreur inattendue");
-            alert.setContentText("Une erreur s'est produite lors de l'enregistrement de l'utilisateur.");
-            alert.showAndWait();
         }
-    }*/
-
+    }
 
     @FXML
     public void selectRole(){

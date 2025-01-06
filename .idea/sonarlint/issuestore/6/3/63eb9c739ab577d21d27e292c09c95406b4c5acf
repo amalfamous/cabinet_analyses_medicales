@@ -1,20 +1,21 @@
 
 R
-java:S3740‰"/Provide the parametrized type for this generic.(øêíøÿÿÿÿ8ä™¤ Â2
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8è™¤ Â2
-q	java:S116"URename this field "admin_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã£Ö™8Úš¤ Â2
-t	java:S116"XRename this field "button_loggin" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÅù“8Úš¤ Â2
-z	java:S116"YRename this field "button_sign_up" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô±§Èøÿÿÿÿ8Úš¤ Â2
-r	java:S116""VRename this field "tf_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó„‹Ó8Úš¤ Â2
-q	java:S116%"VRename this field "tf_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã«Ñs8Úš¤ Â2
+java:S3740"/Provide the parametrized type for this generic.(øêíøÿÿÿÿ8ˆ”“ŞÃ2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8”“ŞÃ2
+q	java:S116"URename this field "admin_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã£Ö™8İ”“ŞÃ2
+t	java:S116"XRename this field "button_loggin" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÅù“8İ”“ŞÃ2
+z	java:S116"YRename this field "button_sign_up" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô±§Èøÿÿÿÿ8Ş”“ŞÃ2
+r	java:S116""VRename this field "tf_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó„‹Ó8Ş”“ŞÃ2
+q	java:S116&"VRename this field "tf_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã«Ñs8Ş”“ŞÃ2
+u	java:S116*"YRename this field "MotPasseOublie" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßã½„8¤ªŞÃ2
 t
-java:S37769"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(›°şÿûÿÿÿÿ8äš¤ Â2
-L	java:S106<"+Replace this use of System.out by a logger.(Ôù‘ûÿÿÿÿ8æš¤ Â2
-F	java:S106="+Replace this use of System.out by a logger.(»ò‚q8æš¤ Â2
+java:S3776?"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(›°şÿûÿÿÿÿ8ç”“ŞÃ2
+L	java:S106B"+Replace this use of System.out by a logger.(Ôù‘ûÿÿÿÿ8é”“ŞÃ2
+F	java:S106C"+Replace this use of System.out by a logger.(»ò‚q8é”“ŞÃ2
 S
-java:S2696H"6Make the enclosing method "static" or remove this set.(›´ÔÈ8¬è½¯Â2
-L	java:S106d"+Replace this use of System.out by a logger.(’ «´úÿÿÿÿ8ûš¤ Â2
+java:S2696N"6Make the enclosing method "static" or remove this set.(›´ÔÈ8ë”“ŞÃ2
+L	java:S106k"+Replace this use of System.out by a logger.(’ «´úÿÿÿÿ8û”“ŞÃ2
 I
-java:S1172j",Remove this unused method parameter "event".(×öƒÎ8ıš¤ Â2
+java:S1172q",Remove this unused method parameter "event".(×öƒÎ8ü”“ŞÃ2
 w
-java:S3012‡"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(”Í€8ƒ›¤ Â2
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(”Í€8ƒ•“ŞÃ2

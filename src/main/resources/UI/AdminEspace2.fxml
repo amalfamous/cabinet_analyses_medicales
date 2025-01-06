@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="col_Nom_patient" prefHeight="606.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="607.0" prefWidth="200.0" style="-fx-background-color: #9DB0CE;">
+         <children>
+            <Button fx:id="button_logout" layoutX="38.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #535878;" text="Déconnexion" textFill="WHITE" />
+            <Button fx:id="button_ordreAnalyses" layoutX="15.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Ordre d'analyses" textFill="WHITE" />
+            <Button fx:id="button_factures" layoutX="17.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Factures" textFill="WHITE" />
+            <Text layoutX="39.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue, " wrappingWidth="121.2421875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="username" layoutX="50.0" layoutY="73.0" text="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_resultatsAnalyses" layoutX="15.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Analyses" textFill="WHITE" />
+            <Button fx:id="button_resultatsAnalyses1" layoutX="16.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Users" textFill="WHITE" />
+            <Button fx:id="button_resultatsAnalyses11" layoutX="15.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Résultats des analyses" textFill="WHITE" />
+            <Button fx:id="button_resultatsAnalyses111" layoutX="15.0" layoutY="343.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Laborantins" textFill="WHITE" />
+            <Button fx:id="button_resultatsAnalyses1111" layoutX="15.0" layoutY="395.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Medcins" textFill="WHITE" />
+            <Button fx:id="button_resultatsAnalyses11111" layoutX="16.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #535878;" text="Patients" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="201.0" prefHeight="402.0" prefWidth="600.0">
+         <children>
+            <AnchorPane fx:id="form_resultatAnalyse" layoutX="7.0" layoutY="11.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="83.0" prefHeight="280.0" prefWidth="632.0">
+                     <children>
+                        <TableView fx:id="resultatAnalyses_tableView" layoutX="14.0" layoutY="65.0" prefHeight="191.0" prefWidth="621.0">
+                           <columns>
+                              <TableColumn fx:id="col_resultatAnalyseId" prefWidth="38.66670227050781" text="Id" />
+                              <TableColumn fx:id="col_Analyse_resultatAnalyse" prefWidth="70.66665649414062" text="Analyse" />
+                              <TableColumn fx:id="col_date_resultatAnalyse" prefWidth="105.99996948242188" text="Date Résultat" />
+                              <TableColumn fx:id="col_valeurKey_resultatAnalyse" prefWidth="134.66665649414062" text="Valeur key" />
+                              <TableColumn fx:id="col_valeurValue_resultatAnalyse" minWidth="8.6666259765625" prefWidth="118.66668701171875" text="Valeur " />
+                              <TableColumn fx:id="col_detail_resultatAnalyse" minWidth="8.6666259765625" prefWidth="152.0" text="Détails" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher" layoutX="24.0" layoutY="24.0" onAction="#rechercherResultatAnalyse" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="button_download_resultat" layoutX="68.0" layoutY="354.0" mnemonicParsing="false" onAction="#telechargerResultatAnalyse" prefHeight="32.0" prefWidth="248.0" style="-fx-background-color: #535878;" text="Telecharger tout les resultat d'analyse (PDF)" textFill="WHITE" />
+                  <Button fx:id="button_download_resultat1" layoutX="343.0" layoutY="354.0" mnemonicParsing="false" onAction="#telechargerResultatAnalyseCSV" prefHeight="32.0" prefWidth="248.0" style="-fx-background-color: #535878;" text="Telecharger tout les resultat d'analyse (CSV)" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_facture" layoutX="17.0" layoutY="21.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="facture_tableView" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_factureId" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_montantTotal" prefWidth="169.33331298828125" text="Montant Total" />
+                              <TableColumn fx:id="col_dateFacture" prefWidth="176.00003051757812" text="Date Facture" />
+                              <TableColumn fx:id="col_etatPaiementF" prefWidth="212.0" text="Etat Paiement" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher2" layoutX="24.0" layoutY="24.0" onAction="#rechercherFacture" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_ordreA" layoutX="27.0" layoutY="31.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="ordreAnalyse_tableView" layoutY="74.0" prefHeight="191.0" prefWidth="619.0">
+                           <columns>
+                              <TableColumn fx:id="col_ordreAnalyseId" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_date_ordre_analyse" prefWidth="106.66665649414062" text="Date Ordre" />
+                              <TableColumn fx:id="col_medecin" prefWidth="91.33331298828125" text="Medecin" />
+                              <TableColumn fx:id="col_resultat" prefWidth="372.0000305175781" text="Resultat d'analyse" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher21" layoutX="24.0" layoutY="24.0" onAction="#rechercherOrdreAnalyse" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_facture1" layoutX="27.0" layoutY="31.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="facture_tableView1" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_factureId1" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_montantTotal1" prefWidth="169.33331298828125" text="Montant Total" />
+                              <TableColumn fx:id="col_dateFacture1" prefWidth="176.00003051757812" text="Date Facture" />
+                              <TableColumn fx:id="col_etatPaiementF1" prefWidth="212.0" text="Etat Paiement" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher22" layoutX="24.0" layoutY="24.0" onAction="#rechercherFacture" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_facture11" layoutX="37.0" layoutY="41.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="facture_tableView11" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_factureId11" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_montantTotal11" prefWidth="169.33331298828125" text="Montant Total" />
+                              <TableColumn fx:id="col_dateFacture11" prefWidth="176.00003051757812" text="Date Facture" />
+                              <TableColumn fx:id="col_etatPaiementF11" prefWidth="212.0" text="Etat Paiement" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher221" layoutX="24.0" layoutY="24.0" onAction="#rechercherFacture" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_facture111" layoutX="47.0" layoutY="51.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="facture_tableView111" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_factureId111" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_montantTotal111" prefWidth="169.33331298828125" text="Montant Total" />
+                              <TableColumn fx:id="col_dateFacture111" prefWidth="176.00003051757812" text="Date Facture" />
+                              <TableColumn fx:id="col_etatPaiementF111" prefWidth="212.0" text="Etat Paiement" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher2211" layoutX="24.0" layoutY="24.0" onAction="#rechercherFacture" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="form_facture1111" layoutX="57.0" layoutY="61.0" prefHeight="400.0" prefWidth="580.0" style="-fx-background-radius: 8px;" visible="false">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="37.0" prefHeight="280.0" prefWidth="580.0">
+                     <children>
+                        <TableView fx:id="facture_tableView1111" layoutX="14.0" layoutY="74.0" prefHeight="191.0" prefWidth="605.0">
+                           <columns>
+                              <TableColumn fx:id="col_factureId1111" prefWidth="48.666656494140625" text="Id" />
+                              <TableColumn fx:id="col_montantTotal1111" prefWidth="169.33331298828125" text="Montant Total" />
+                              <TableColumn fx:id="col_dateFacture1111" prefWidth="176.00003051757812" text="Date Facture" />
+                              <TableColumn fx:id="col_etatPaiementF1111" prefWidth="212.0" text="Etat Paiement" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="btn_rechercher22111" layoutX="24.0" layoutY="24.0" onAction="#rechercherFacture" promptText="Rechercher" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
