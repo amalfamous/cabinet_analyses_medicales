@@ -630,30 +630,6 @@ indexOf(cellData.getValue()) retourne l'index de l'élément actuel dans la list
         patient_tableView.refresh(); // Rafraîchir la vue
     }
 
-    /*
-
-    @FXML
-    void rechercherPatient(ActionEvent event) {
-        String query = btn_rechercher2.getText().toLowerCase();
-        ObservableList<Patient> tableData = patient_tableView.getItems();
-        // Réinitialiser si le champ de recherche est vide
-        if (query.isEmpty()) {
-            patient_tableView.setVisible(true);
-            patient_tableView.refresh(); // Pour réafficher toutes les lignes
-            return;
-        }
-        // Filtrer les données visibles dans le TableView
-        FilteredList<Patient> filteredData = new FilteredList<>(tableData, patient -> {
-            // Vérifier si la recherche correspond à l'une des colonnes
-            return patient.getNom().toLowerCase().contains(query) ||
-                    patient.getPrenom().toLowerCase().contains(query) || patient.getTelephone().toLowerCase().contains(query) ||
-                    patient.getAdresse().toLowerCase().contains(query) || patient.getEmail().toLowerCase().contains(query) ||
-                    String.valueOf(patient.getDateNaissance()).contains(query);
-        });
-        patient_tableView.setItems(filteredData);
-        patient_tableView.refresh();
-        patient_tableView.setVisible(true);
-    }*/
 
     public void rechercherResultatAnalyse(ActionEvent event) {
         String query = btn_rechercher.getText().toLowerCase();

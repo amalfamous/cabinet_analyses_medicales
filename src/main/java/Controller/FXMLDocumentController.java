@@ -87,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
                     } else if ("ROLE_MEDECIN".equalsIgnoreCase(role)) {
                         root = FXMLLoader.load(getClass().getResource("/UI/MedecinEspace2.fxml"));
                     } else if ("ROLE_ADMIN".equalsIgnoreCase(role)) {
-                        root = FXMLLoader.load(getClass().getResource("/UI/AdminEspace.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/UI/AdminEspace2.fxml"));
                     } else {
                         errorMessage("Rôle inconnu !");
                         return;
