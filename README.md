@@ -1,37 +1,59 @@
-Gestion d’un Cabinet d’Analyses Médicales
-Aperçu
-Une application de bureau pour gérer un cabinet d’analyses médicales. Elle aide à organiser les analyses, suivre les résultats et faciliter la communication entre patients, médecins, laborantins et administrateurs.
-Fonctionnalités
+```markdown
+# Gestion d’un Cabinet d’Analyses Médicales
 
-Patients : Voir les analyses, télécharger les résultats (PDF/CSV), suivre les factures.  
-Médecins : Prescrire des analyses, consulter les résultats.  
-Laborantins : Gérer les analyses, enregistrer les résultats.  
-Administrateurs : Gérer les utilisateurs, superviser le système.
+## Aperçu
 
-Technologies
+Application de bureau pour la gestion d’un cabinet d’analyses médicales.  
+Elle permet d’organiser les analyses, suivre les résultats et faciliter la communication entre les différents acteurs : patients, médecins, laborantins et administrateurs.
 
-Java et JavaFX pour l’interface et la logique.  
-MySQL pour la base de données.  
-Maven pour gérer les dépendances.
+## Fonctionnalités
 
-Installation
+- Patients : consulter les analyses, télécharger les résultats (PDF/CSV), suivre les factures.  
+- Médecins : prescrire des analyses, consulter les résultats.  
+- Laborantins : gérer les analyses, enregistrer les résultats.  
+- Administrateurs : gérer les utilisateurs, superviser le système.
 
-Installez Java 11+, Maven et MySQL.  
-Clonez le dépôt :  git clone https://github.com/amalfamous/cabinet_analyses_medicales.git
+## Technologies
 
+- Java & JavaFX pour l’interface et la logique métier  
+- MySQL pour la base de données  
+- Maven pour la gestion des dépendances et le build
 
-Créez une base de données MySQL :  CREATE DATABASE cabinet;
+## Installation
 
-Configurez la connexion dans persistence.xml (URL, utilisateur, mot de passe).  
-Construisez le projet :  mvn clean install
+1. Installer Java 11+, Maven et MySQL.  
+2. Cloner le dépôt :
 
+   ```
+   git clone https://github.com/amalfamous/cabinet_analyses_medicales.git
+   cd cabinet_analyses_medicales
+   ```
 
+3. Créer la base de données MySQL :
 
-Exécution
-Lancez l’application :  
+   ```
+   CREATE DATABASE cabinet;
+   ```
+
+4. Configurer la connexion à la base dans le fichier `persistence.xml`.  
+5. Construire le projet :
+
+   ```
+   mvn clean install
+   ```
+
+## Exécution
+
+Lancer l’application :
+
+```
 mvn javafx:run
+```
 
-Captures d’Écran
-Des images de l’interface (connexion, tableaux de bord) sont dans les pièces jointes du projet.
-Licence
-Aucune licence spécifiée. Ajoutez-en une (ex. MIT) si vous partagez le projet.
+## Licence
+
+Aucune licence n’est définie pour le moment.  
+Vous pouvez en ajouter une (par exemple MIT) si vous souhaitez partager ou réutiliser ce projet.
+```
+
+Question rapide : tu veux que je t’aide à le passer aussi en anglais pour ton GitHub (utile pour les recruteurs), ou le français te suffit pour ce dépôt-là ?
