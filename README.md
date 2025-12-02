@@ -48,5 +48,4 @@ Lancer l’application :
 
 ```
 mvn javafx:run
-```
 
