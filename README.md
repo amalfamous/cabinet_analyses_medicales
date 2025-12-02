@@ -50,10 +50,3 @@ Lancer l’application :
 mvn javafx:run
 ```
 
-## Licence
-
-Aucune licence n’est définie pour le moment.  
-Vous pouvez en ajouter une (par exemple MIT) si vous souhaitez partager ou réutiliser ce projet.
-```
-
-Question rapide : tu veux que je t’aide à le passer aussi en anglais pour ton GitHub (utile pour les recruteurs), ou le français te suffit pour ce dépôt-là ?
